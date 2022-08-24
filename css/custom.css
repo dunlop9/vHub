@@ -1,0 +1,562 @@
+body {
+    font-family: 'Gotham';font-size: 18px;
+}
+
+/*Colors*/
+.grey-text{
+	color: #777779 !important;
+}
+
+.darkgrey-text{
+	color: #373935  !important;
+}
+.black-text{
+	color: #393C47  !important;
+}
+
+.signup-text{
+	color: #373935;
+	font-weight: 700;
+}
+
+.signup-text:hover{
+	color: #085BE7;
+	font-weight: 700;
+}
+
+.forgot-text{
+	color: #373935;
+}
+
+.forgot-text:hover{
+	color: #085BE7;
+}
+
+/*custom bootstrap classes*/
+.w-22 {
+    width: 22%!important;
+}
+
+.fs-7 {
+    font-size: 0.875rem!important;
+}
+
+/*login styles*/
+.login-banner-bg{
+	background-image: radial-gradient(#EBF7F5, #63C1AB);
+	height:100vh;
+}
+
+.login-banner2{
+	background-image: url('../images/banner2.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.login-banner3{
+	background-image: url('../images/banner3.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.logo{
+	background-image: url('../images/logo.png');
+	background-repeat: no-repeat;
+	height: 17px;
+}
+
+.login-btn{
+	color:#373935;
+	background-color: #EFC300;
+	border-color: #EFC300;
+	font-weight: 500;
+}
+
+.login-btn:hover{
+	color:#373935;
+}
+
+.login-input{
+	color: #393C47;
+	background: #FFFFFF;
+	border: 1px solid #EAEAEA;
+	border-radius: 4px;
+	height:56px;
+}
+
+.login-vertical-center {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
+@media screen and (max-width: 767px) {
+	.login-vertical-center {
+		margin: 0;
+		position: relative;
+		top: 0%;
+		-ms-transform: translateY(0%);
+		transform: translateY(0%);
+	}
+}
+
+.text-banner{
+	margin-left: 20vw;
+	margin-top: 85vh;
+}
+
+.banner-main{
+	color: #ffffff;
+	font-style: italic;
+	font-weight: 600;
+}
+
+.banner-sub{
+	color: #ffffff;
+	font-size: 25px;
+	font-weight: 100;
+}
+
+/*.account .signup-text{
+	color: #246B5A;
+}*/
+
+
+/* Menu & Sidebar */
+#sidebarCollapse {
+    width: 32px;
+    height: 32px;
+}
+
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+}
+
+#sidebarCollapse span:first-of-type {
+    /* rotate first one */
+    transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2) {
+    /* second one is not visible */
+    opacity: 0;
+}
+#sidebarCollapse span:last-of-type {
+    /* rotate third one */
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+    /* no rotation */
+    transform: none;
+    /* all bars are visible */
+    opacity: 1;
+    margin: 5px auto;
+}
+
+.bg-breadcrumb{
+	background-color: #FBEDB3;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+	border-radius: 0px;
+	height: 30px;
+}
+
+.breadcrumb-item.active {
+	color: #373935  !important;
+	opacity: 0.5 !important;
+}
+
+.breadcrumb-lastarrow{
+	width: 12px;
+}
+
+#menu > li > a{
+	color: #393C47  !important;
+	opacity:0.7;
+	margin-bottom: 8px;
+}
+
+/*#menu > li > a::before{
+	content: "test";
+	background-image: url(../images/icons/arrow.svg);
+	width: 15px;
+	height: 15px;
+}*/
+
+#menu > li > ul > li a{
+	color: #373935  !important;
+}
+
+#menu > li > ul > li a:hover {
+	background: rgba(119, 119, 121, 0.05);
+	border-radius: 4px;
+	width: 270px !important; 
+}
+
+.nav-pills .nav-link.active{
+	background: #EBF7F5;
+	border-radius: 4px;
+	width: 270px !important;
+}
+
+.menu-hr {
+	border-top: 1px solid #F1F2F3 !important;
+	margin-top: 0.725rem;
+    margin-bottom: 0.725rem;
+}
+
+.menu-icon{
+	margin-right:12px;
+}
+
+p > #headerSearch{
+	color: #777779;
+	font-weight: 500;
+}
+
+p > #headerLang{
+	color: #777779;
+	font-weight: 500;
+}
+
+#headerSearch > span:hover{
+	color: #373935  !important;
+	border-bottom: 2px Solid #63C1AB;
+}
+
+#headerLang > span:hover{
+	color: #373935  !important;
+	border-bottom: 2px Solid #63C1AB;
+}
+
+.top-nav{
+	height:64px;
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    left: -205px;
+	width: 230px;
+}
+
+.user-profile > li > a{
+	padding: .25rem 0.5rem !important;
+}
+
+.user-profile > li:hover{
+	background: rgba(119, 119, 121, 0.05);
+	border-radius: 4px;
+	width: 210px !important;	
+}
+
+.user-profile > li > a:hover{
+	background: none !important;
+}
+
+.last-accessed > li:hover{
+	background: rgba(119, 119, 121, 0.05);
+	border-radius: 4px;
+	width: 180px !important;
+}
+
+.last-accessed > li > a:hover{
+	background: none !important;
+}
+
+.offcanvas-start {
+	top: 58px;
+}
+
+.offcanvas-start > .offcanvas-body > .nav-pills {
+	margin-left: 32px;
+}
+
+.nav-search{
+	height: 35px;
+}
+.nav-separator{
+	color: #373935  !important;
+	opacity: 0.2
+}
+
+/* Organization Styles */
+
+.clsLastAccessed {
+	padding-top: 5px !important;
+    text-align: right;
+}
+.clsSearchCntr {
+	padding-right: 10px !important;
+}
+.clsLastAccessedMenu {
+	left: 24px !important;
+    top: -24px !important;
+	width: 200px;
+}
+.clsNoRightMargin {
+	margin-right: 0px !important;
+}
+.clsStandardText {
+	font-size: 14px;
+	font-weight: 400;
+}
+.clsBoldText, .ag-header-cell-text {
+	font-size: 14px;
+	font-weight: 500;
+	color: #373935;
+}
+.clsBolderText {
+	font-size: 14px;
+	font-weight: 700;
+	color: #373935;
+}
+.clsBolderSectionHeading {
+	font-size: 20px;
+	font-weight: 700;
+	color: #373935;
+}
+.clsAnchor {
+	color: #085BE7;
+}
+.clsAnchor:hover {
+	color: #085BE7;
+	font-weight: bold;
+}
+
+/* Organization General Info Styles */
+.clsTabButton {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 13px;
+	color: #777779;
+	width: 100%;
+	border-radius: 0px;	
+	background: rgba(119, 119, 121, 0.05);
+	border: 1px solid rgba(119, 119, 121, 0.2);	
+	height: 48px;
+}
+.clsTabButton img{
+	vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 8px;
+}
+.clsTabSelected {
+	border-bottom:3px solid #3CB296;
+	color: #373935;
+}
+.clsNoPaddingLeft {
+	padding-left: 0px;
+}
+.clsNoPaddingRight {
+    padding-right: 0px;
+}
+.clsOrgGenLogo {
+	text-align: center;
+}
+.clsOrgGenFormButtonRow{
+	margin-top: 130px;
+}
+.clsFormButtonNormal {
+	color: #373935;
+    background-color: none;
+	border: 1px solid #373935;
+	border-radius: 4px;
+	width: 160px !important;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 13px;
+	height: 40px;
+}
+.clsFormButtonDefault {
+	color: #373935;
+    background-color: #EFC300;
+    border-color: #EFC300;
+	width: 160px !important;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 13px;
+	height: 40px;
+}
+.clsOrgGenAddressRow {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.clsAlignRight {
+	text-align: right;
+}
+.clsOrgRolesSearchRow {
+	margin-top: 24px;
+	margin-bottom: 16px;
+}
+.clsDispInlineBlock{
+	display: inline-block;
+}
+.clsOrgRolesSearchCntr {
+	display: inline-block;
+}
+.clsOrgRolesSearchCntr input {
+	height: 40px;
+}
+.clsOrgRolesAddBtn {
+	margin-top: -5px;
+	margin-left: 10px;
+}
+
+/*AG-Grid Custom styles*/
+.ag-theme-alpine {
+	--ag-row-hover-color: rgba(119, 119, 121, 0.05) !important;
+}
+
+.driver-btn {
+	background: #EFC300; 
+	border-radius: 4px;
+	width:160px;
+}
+
+.cancel-btn {
+	border: 1px solid #373935;
+	border-radius: 4px;
+	width: 160px;
+}
+
+
+/* Company Registration Form Styles */
+.clsFormStandardTopMargin {
+	margin-top: 19px;
+}
+.clsFormControlTopMargin {
+	margin-top: 16px;
+}
+.clsFormMandatory {
+	font-size: 24px;
+	color: #E31B1A;
+	position: relative;
+    top: 5px;
+}
+.clsFormSectionHeading {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #393C47;
+}
+.clsFormSectionSep {
+	border-bottom: 1.5px solid rgba(119, 119, 121, 0.2);
+	margin-bottom: 24px;
+}
+.clsFormInputControl {
+	padding: 8px 16px;
+	height: 39px;
+	border-bottom: 1px solid rgba(227, 27, 26, 0.5);
+	border-radius: 4px;
+}
+.clsFormStandardBtnRowMargin {
+	margin-top: 44px;
+	margin-bottom: 38px;
+}
+
+.clsCheckboxContainer {
+	display: block;
+	position: relative;
+	padding-left: 45px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	font-size: 20px;
+}
+  
+.clsControlLabel{
+	color: #373935 !important;
+}
+.clsCompanyLogo {
+	margin-top: 6px;
+}
+
+/* Org Roles - Permissions Styles */
+
+.clsOrgRolePermissionsList {
+	list-style: none;
+    padding-left: 0px;
+}
+.clsOrgRolePermissionsList li {
+	margin: 0px !important;
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+	font-size: 16px;
+	font-weight: 500;
+	color: #373935;
+}
+.clsOrgRolePermissionsList li a{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.clsModalBodyPermissions {
+	padding: 24px;
+}
+
+.clsSectionCaption {
+	font-size: 16px;
+}
+
+.clsOrgRolePermissionsList li .form-check-input:checked {
+    background-color: #3CB296;
+    border-color: #3CB296;;
+}
+.clsModalPermissionsFooter {
+	padding-top: 0px;
+	padding-bottom: 29px;
+	border: 0px;
+}
+
+
+.fw-500{
+	font-weight:500 !important;
+}
+
+.accountApprBg{
+	background: rgba(60, 178, 150, .10);
+	height: 40px;
+	border-radius: 4px;
+	margin-top:20px;
+}
+
+.accountApprBtnRed{
+	background: #E31B1A;
+	border-radius: 2px;
+	color:white;
+	font-size: 12px;
+	height: 28px;
+	padding: 0.3rem 0.75rem;
+    font-weight: 500;
+	margin-left: 55px;
+	margin-right: 8px;
+}
+
+.accountApprBtnRed:hover{
+	color:white;
+}
+
+.clsCustProfileBtnSection{
+	margin-top:64px;
+	border-top: 1px solid rgba(119, 119, 121, 0.2);
+	box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clsNoMargin {
+	margin: 0px;
+}
+
+.clsNoPadding {
+	padding: 0px;
+}
+
+.clsDisabledText {
+	color: rgba(119, 119, 121, 0.7);
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vHub | Smart Trailer Sharing &  Repositioning</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/custom.css">
+	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+	<link rel="icon" href="../images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+	
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="../js/org-roles.js"></script>
+	<script src="../js/common.js"></script>
+	
+</head>
+<body>
+<div class="offcanvas offcanvas-start w-22" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header  d-none">
+       
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start fs-7" id="menu">
+            <li class="nav-item">
+                <div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+				  <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+				</div>
+            </li>
+            <li>
+                <a href="#submenu1" data-bs-toggle="collapse" aria-expanded="true" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"> <img class="menu-icon" src="../images/icons/arrow.svg"> Dashboard</span> </a>
+				<ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+					<li class="w-100">
+						<a href="#" class="nav-link px-0"> <span class=" ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/360.svg"> 360 View</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/map.svg"> Map Download</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/live.svg"> Live Dashboard</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/reservation.svg"> Reservations</span></a>
+					</li>
+				</ul>
+            </li>
+			<span class="w-75 ms-3 menu-hr"></span>
+            <li>
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Reports</span></a>
+				<ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+					<li class="w-100">
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equipment.svg"> Equipement</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/invoices.svg"> Invoices</span></a>
+					</li>
+					<li>
+						<a href="drivers.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/drivers.svg"> Drivers</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/chat.svg"> Chat History</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/sale.svg"> Assets for Sale</span></a>
+					</li>
+				</ul>
+            </li>
+			<span class="w-75 ms-3 menu-hr"></span>
+			<li>
+				<a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-2 align-middle "> <span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Administration</span></a>
+				<ul class="collapse nav flex-column ms-1 show" id="submenu3" data-bs-parent="#menu">
+					<li>
+						<a href="organizations.html" class="nav-link px-0 active"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
+					</li>
+					<li class="w-100">
+					   <a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/roles.svg"> Roles & Permissions</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/user-mgmt.svg"> User Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/asset-mgmt.svg"> Asset Type Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-mgmt.svg"> Equipement Type Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-list.svg"> Equipement Listing</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/parking.svg"> Parking Lot Management</span></a>
+					</li>
+				</ul>
+			</li>
+			<span class="w-75 ms-3 menu-hr"></span>
+			<li>
+				<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/notifications.svg"> Notifications</span></a>
+			</li>
+			<li>
+				<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/api.svg"> API</span></a>
+			</li>
+        </ul>
+    </div>
+</div>
+<header>
+	<nav class="navbar top-nav sticky-top bg-white">
+		<div class="container-fluid">
+			<button class="btn float-end navbar-btn active p-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+			<a class="navbar-brand ms-4" href="https://www.vhubapp.com/" target="_blank">
+				<img src="../images/logo.png" />
+				<!--<div class="logo"></div>-->
+			</a>
+			<div class="navbar-nav flex-row ms-md-auto pe-0">
+				<form class="d-flex" role="search">
+				  <input class="form-control me-3 mt-1 nav-search" type="search" placeholder="Search" aria-label="Search">
+				</form>
+				<span class="nav-separator mt-1 fs-5"> | </span>
+				<ul class="navbar-nav flex-row flex-wrap">
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
+					<span class="nav-separator mt-1 fs-5 pe-3"> | </span>
+					<li class="nav-item col-6 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
+					<li class="nav-item col-6 col-lg-auto mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
+					<li class="nav-item dropdown ms-3 me-1 mt-1">
+					  <a class="nav-link  grey-text fs-7" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+						<img src="../images/icons/arrow-down.svg">
+					  </a>
+					  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start user-profile fs-7">
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/profile.svg" class="me-2"> My Profile</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/change-pass.svg" class="me-2"> Change Password</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/notifications-grey.svg" class="me-2"> Notifications</a></li>
+						<li class="form-switch ps-0 py-2 mx-2"><a class="dropdown-item darkgrey-text d-inline" href="#"><img src="../images/icons/language.svg" class="me-2"> Francais</a> <input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/switch.svg" class="me-2"> Switch Customer</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/logout.svg" class="me-2"> Logout</a></li>
+					  </ul>
+					</li>
+					<li  class="nav-item col-6 col-lg-auto"></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="bg-breadcrumb">
+	    <div class="row me-0">
+		  <div class="col-10">
+			<ol class="breadcrumb fs-7 ms-2 pt-1">
+				<li class="breadcrumb-item"><a href="#" class="darkgrey-text text-decoration-none">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Drivers</li>
+			</ol>
+		  </div>
+		  
+		  <div class="col-2">
+			  <a class="nav-link  grey-text fs-7 pt-1 pe-1 text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+				Last Accessed <img class="breadcrumb-lastarrow" src="../images/icons/arrow-down.svg">
+			  </a>
+			  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start last-accessed clsLastAccessedMenu fs-7 ">
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Notifications</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Live Dashboard</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Reservations</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Equipment</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Invoices</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Drivers</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Chat History</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Equipment Listing</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Customer Profile</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Drivers</a></li>
+			  </ul>
+		  </div>
+	    </div>
+	</nav>
+</header>
+<div class="container-fluid">
+    <div class="row fs-7">
+        <div class="col-md-4 clsNoPaddingLeft clsNoPaddingRight">
+			<button class="btn clsTabButton" onclick="openlink(11)"><img src="../images/icons/circle.svg">General Information</button>
+		</div>
+        <div class="col-md-4 clsNoPaddingLeft clsNoPaddingRight">
+			<button class="btn clsTabButton clsTabSelected" onclick="openlink(12)"><img src="../images/icons/radio.svg">Roles & Permissions</button>
+		</div>
+        <div class="col-md-4 clsNoPaddingLeft clsNoPaddingRight">
+			<button class="btn clsTabButton" onclick="openlink(13)"><img src="../images/icons/radio.svg">Users</button>
+		</div>		
+    </div>
+</div>
+
+<div class="container-fluid clsOrgRolesSearchRow">
+    <div class="row fs-7">
+        <div class="col-md-3">
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-4 clsSearchCntr">		
+			<div class="row clsNoMargin">
+				<div class="col-md-12 clsAlignRight clsNoPadding">
+					<div class="clsOrgRolesSearchCntr">
+						<div class="input-group">
+						  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+						  <input type="text" class="form-control clsStandardText" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+						</div>
+					</div>
+					<button class="btn clsFormButtonDefault clsOrgRolesAddBtn" data-bs-toggle="modal" data-bs-target="#addRoleModal">Add Role</button>
+				</div>	
+			</div>
+		</div>
+    </div>
+</div>
+
+
+<div id="myGrid" style="height: 303px;margin-left: 10px; margin-right: 10px;" class="ag-theme-alpine"></div>
+
+
+	<!--Permissions Modal -->
+	<div class="modal fade" id="permissionsModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="clsModalBodyPermissions">
+			<h5 class="modal-title clsBolderSectionHeading mb-2">Permissions</h5>
+			<span class="clsSectionCaption mb-4">Role: Admin</span>
+			<form>
+				<div class="mb-4 mt-3">
+					  <ul class="fs-7 clsOrgRolePermissionsList">
+						<li class="form-switch ps-0 py-2 mx-2"><span class="d-inline" href="#">Equipment Screen</span> <input class="form-check-input float-end" type="checkbox" role="switch" checked></li>
+						<li class="form-switch ps-0 py-2 mx-2"><span class="d-inline" href="#">Reservation Screen</span> <input class="form-check-input float-end" type="checkbox" role="switch" checked></li>
+						<li class="form-switch ps-0 py-2 mx-2"><span class="d-inline" href="#">Notifications Screen</span> <input class="form-check-input float-end" type="checkbox" role="switch" checked></li>
+						<li class="form-switch ps-0 py-2 mx-2"><span class="d-inline" href="#">Customers Screen</span> <input class="form-check-input float-end" type="checkbox" role="switch" checked></li>						
+						<li class="form-switch ps-0 py-2 mx-2"><span class="d-inline" href="#">Parking Lot Screen</span> <input class="form-check-input float-end" type="checkbox" role="switch" checked></li>						
+					  </ul>
+				</div>
+			</form>
+		  </div>
+		  <div class="modal-footer clsModalPermissionsFooter">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn clsBoldText driver-btn">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	
+	<!--Add Role Modal -->
+	<div class="modal fade" id="addRoleModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="clsModalBodyPermissions">
+			<h5 class="modal-title clsBolderSectionHeading mb-2">Add Role</h5>
+				<div class="mb-2 mt-3">
+					<span class="grey-text clsStandardText">Role</span>
+					<input type="text" class="form-control clsStandardText clsBoldText" placeholder="Enter Role" value="Admin" aria-label="Role">
+				</div>
+		  </div>
+		  <div class="modal-footer clsModalPermissionsFooter">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn clsBoldText driver-btn">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>	
+	
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script>
+		/*function toggleFunc(){
+		 var element = document.getElementById("sidebarCollapse");
+   element.classList.toggle("active");
+   }*/
+	</script>
+</body>
+</html>
