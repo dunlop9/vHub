@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vHub | Smart Trailer Sharing &  Repositioning</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/custom.css">
+	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+	<link rel="icon" href="../images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="../js/parking-lot.js"></script>
+</head>
+<body>
+<div class="offcanvas offcanvas-start w-22" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header  d-none">
+       
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start fs-7" id="menu">
+            <li class="nav-item">
+                <div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+				  <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+				</div>
+            </li>
+            <li>
+                <a href="#submenu1" data-bs-toggle="collapse" aria-expanded="true" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"> <img class="menu-icon" src="../images/icons/arrow.svg"> Dashboard</span> </a>
+				<ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+					<li class="w-100">
+						<a href="#" class="nav-link px-0"> <span class=" ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/360.svg"> 360 View</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/map.svg"> Map Download</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/live.svg"> Live Dashboard</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/reservation.svg"> Reservations</span></a>
+					</li>
+				</ul>
+            </li>
+			<span class="w-75 ms-3 menu-hr"></span>
+            <li>
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Reports</span></a>
+				<ul class="collapse nav flex-column ms-1 show" id="submenu2" data-bs-parent="#menu">
+					<li class="w-100">
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equipment.svg"> Equipement</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/invoices.svg"> Invoices</span></a>
+					</li>
+					<li>
+						<a href="drivers.html" class="nav-link px-0 active"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/drivers.svg"> Drivers</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/chat.svg"> Chat History</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/sale.svg"> Assets for Sale</span></a>
+					</li>
+				</ul>
+            </li>
+			<span class="w-75 ms-3 menu-hr"></span>
+			<li>
+				<a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-2 align-middle "> <span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Administration</span></a>
+				<ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+					<li>
+						<a href="organizations.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
+					</li>
+					<li class="w-100">
+					   <a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/roles.svg"> Roles & Permissions</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/user-mgmt.svg"> User Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/asset-mgmt.svg"> Asset Type Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-mgmt.svg"> Equipement Type Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-list.svg"> Equipement Listing</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/parking.svg"> Parking Lot Management</span></a>
+					</li>
+				</ul>
+			</li>
+			<span class="w-75 ms-3 menu-hr"></span>
+			<li>
+				<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/notifications.svg"> Notifications</span></a>
+			</li>
+			<li>
+				<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/api.svg"> API</span></a>
+			</li>
+        </ul>
+    </div>
+</div>
+<header>
+	<nav class="navbar top-nav sticky-top bg-white">
+		<div class="container-fluid">
+			<button class="btn float-end navbar-btn active p-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+			<a class="navbar-brand ms-4" href="https://www.vhubapp.com/" target="_blank">
+				<img src="../images/logo.png" />
+				<!--<div class="logo"></div>-->
+			</a>
+			<div class="navbar-nav flex-row ms-md-auto pe-0">
+				<form class="d-flex" role="search">
+				  <input class="form-control me-3 mt-1 nav-search" type="search" placeholder="Search" aria-label="Search">
+				</form>
+				<span class="nav-separator mt-1 fs-5"> | </span>
+				<ul class="navbar-nav flex-row flex-wrap">
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
+					<span class="nav-separator mt-1 fs-5 pe-3"> | </span>
+					<li class="nav-item col-6 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
+					<li class="nav-item col-6 col-lg-auto mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
+					<li class="nav-item dropdown ms-3 me-1 mt-1">
+					  <a class="nav-link  grey-text fs-7" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+						<img src="../images/icons/arrow-down.svg">
+					  </a>
+					  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start user-profile fs-7">
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/profile.svg" class="me-2"> My Profile</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/change-pass.svg" class="me-2"> Change Password</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/notifications-grey.svg" class="me-2"> Notifications</a></li>
+						<li class="form-switch ps-0 py-2 mx-2"><a class="dropdown-item darkgrey-text d-inline" href="#"><img src="../images/icons/language.svg" class="me-2"> Francais</a> <input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/switch.svg" class="me-2"> Switch Customer</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/logout.svg" class="me-2"> Logout</a></li>
+					  </ul>
+					</li>
+					<li  class="nav-item col-6 col-lg-auto"></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="bg-breadcrumb">
+	    <div class="row me-0">
+		  <div class="col-10">
+			<ol class="breadcrumb fs-7 ms-2 pt-1">
+				<li class="breadcrumb-item"><a href="#" class="darkgrey-text text-decoration-none">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Parking Lot</li>
+			</ol>
+		  </div>
+		  
+		  <div class="col-2">
+			  <a class="nav-link  grey-text fs-7 pt-1 pe-1 text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+				Last Accessed <img class="breadcrumb-lastarrow" src="../images/icons/arrow-down.svg">
+			  </a>
+			  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start last-accessed clsLastAccessedMenu fs-7 ">
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Notifications</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Live Dashboard</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Reservations</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Equipment</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Invoices</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Drivers</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Chat History</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Equipment Listing</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Customer Profile</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Drivers</a></li>
+			  </ul>
+		  </div>
+	    </div>
+	</nav>
+</header>
+<div class="container-fluid mt-4">
+    <div class="row fs-7">
+        <div class="col-md-3">
+			<span class="grey-text">Company Name (DBA)</span>
+			<select class="form-select clsBoldText" aria-label="Default select example">
+			  <option >Select</option>
+			  <option selected value="1">Ace Cloud Transportation</option>
+			  <option value="2">Prime Transportation</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Status</span>
+			<select class="form-select clsBoldText" aria-label="Default select example">
+			  <option >Select</option>
+			  <option selected value="1">Active</option>
+			  <option value="2">Inactive</option>
+			</select>
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-2 p-4">
+			<div class="input-group" style="width:285px">
+			  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+			  <input type="text" class="form-control clsStandardText" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<div class="col-md-2 p-4 pe-3">
+			<button type="button" class="btn float-end clsBoldText driver-btn" style="" data-bs-toggle="modal" data-bs-target="#createParkingModal">Parking Lot</button>
+
+			<!--Create Parking Lot Modal -->
+			<div class="modal fade" id="createParkingModal" tabindex="-1" aria-labelledby="createParkingModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+				  <div class="modal-body">
+					<h5 class="modal-title" id="createParkingModal">Create Parking Lot</h5>
+					<form>
+						<div class="row mb-4 mt-3">
+							<div class="col-md-6">
+								<label for="parkingName" class="form-label grey-text">Parking Lot Name</label>
+								<input type="text" class="form-control clsBoldText clsFormInputControl" id="parkingName">
+							</div>
+							<div class="col-md-6">
+								<label for="status" class="form-label grey-text">Status </label>
+								<select class="form-select clsBoldText clsFormInputControl" id="status">
+								  <option selected value="1">Active</option>
+								  <option value="2">Inactive</option>
+								</select>
+							</div>
+						</div>
+						<div class="mb-4">
+							<label for="location" class="form-label grey-text">Location</label>
+							<input type="text" class="form-control clsBoldText clsFormInputControl" id="location">
+						</div>
+						<div class="row mb-4">
+							<div class="col-md-6">
+								<label for="contact" class="form-label grey-text">Contact Number </label>
+								<input type="text" class="form-control clsBoldText clsFormInputControl" id="contact">
+							</div>
+							<div class="col-md-6">
+								<label for="email" class="form-label grey-text">Email (Optional)</label>
+								<input type="email" class="form-control clsBoldText" id="email1">
+							</div>
+						</div>
+						<div class="mb-4 ps-0 form-switch toggleSwitchGreen">
+							<label for="contact" class="form-label darkgrey-text fw-500 d-inline">24 hours Access Available</label>
+							<input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+						</div>
+						<div class="mb-4">
+							<label for="access" class="form-label grey-text">Access Instruction (Optional)</label>
+							<input type="email" class="form-control clsBoldText" id="access">
+						</div>
+						<div class="row mb-4">
+							<div class="col-md-6">
+								<div class="col-md-6 d-inline-block me-2">
+								<label for="hourlyRate" class="form-label grey-text">Hourly Rate</label>
+								<select class="form-select grey-text clsFormInputControl" id="hourCurrency">
+								  <option selected value="1">USD</option>
+								</select>
+								</div>
+								<div class="col-md-5 d-inline-block">
+								<input type="text" class="form-control clsBoldText clsFormInputControl" id="hourCost">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="col-md-6 d-inline-block me-2">
+								<label for="dailyRate" class="form-label grey-text">Daily Rate</label>
+								<select class="form-select grey-text clsFormInputControl" id="dailyCurrency">
+								  <option selected value="1">USD</option>
+								</select>
+								</div>
+								<div class="col-md-5 d-inline-block">
+								<input type="text" class="form-control clsBoldText clsFormInputControl" id="dailyCost">
+								</div>
+							</div>
+						</div>
+						<div class="row mb-4">
+							<div class="col-md-6">
+								<div class="col-md-6 d-inline-block me-2">
+								<label for="weeklyRate" class="form-label grey-text">Weekly Rate</label>
+								<select class="form-select grey-text clsFormInputControl" id="weeklyCurrency">
+								  <option selected value="1">USD</option>
+								</select>
+								</div>
+								<div class="col-md-5 d-inline-block">
+								<input type="text" class="form-control clsBoldText clsFormInputControl" id="weeklyCost">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="col-md-6 d-inline-block me-2">
+								<label for="monthlyRate" class="form-label grey-text">Monthly Rate</label>
+								<select class="form-select grey-text clsFormInputControl" id="monthlyCurrency">
+								  <option selected value="1">USD</option>
+								</select>
+								</div>
+								<div class="col-md-5 d-inline-block">
+								<input type="text" class="form-control clsBoldText clsFormInputControl" id="monthlyCost">
+								</div>
+							</div>
+						</div>
+						<div class="mb-3 float-end">
+							<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn clsBoldText driver-btn" data-bs-dismiss="modal" id="createDiver">Create</button>
+						</div>
+					</form>
+				  </div>
+				  <div class="modal-footer d-none">
+					<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn clsBoldText driver-btn" >Create Driver</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+    </div>
+	<div class="row">
+		<div id="myGrid" style="height: 305px;" class="ag-theme-alpine"></div>
+	</div>
+	<!--Edit Parking Lot Modal -->
+	<div class="modal fade fs-7" id="editParkingModal" tabindex="-1" aria-labelledby="editParkingModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="modal-header d-none">
+			<h5 class="modal-title" id="editParkingModal">Edit Driver</h5>
+			<span class="fs-7">All fields are required unless specified optional</span>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+			<h5 class="modal-title" id="editParkingModal">Edit Parking Lot</h5>
+			<form>
+				<div class="row mb-4 mt-3">
+					<div class="col-md-6">
+						<label for="parkingName" class="form-label grey-text">Parking Lot Name</label>
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="parkingName" value="Canada 0127">
+					</div>
+					<div class="col-md-6">
+						<label for="status" class="form-label grey-text">Status </label>
+						<select class="form-select clsBoldText clsFormInputControl" id="status">
+						  <option selected value="1">Active</option>
+						  <option value="2">Inactive</option>
+						</select>
+					</div>
+				</div>
+				<div class="mb-4">
+					<label for="location" class="form-label grey-text">Location</label>
+					<input type="text" class="form-control clsBoldText clsFormInputControl" id="location" value="1060W Addison St, Chicago, IL 60613, USA">
+				</div>
+				<div class="row mb-4">
+					<div class="col-md-6">
+						<label for="contact" class="form-label grey-text">Contact Number </label>
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="contact" value="+1 773 404 2827">
+					</div>
+					<div class="col-md-6">
+						<label for="email" class="form-label grey-text">Email (Optional)</label>
+						<input type="email" class="form-control clsBoldText" id="email1">
+					</div>
+				</div>
+				<div class="mb-4 ps-0 form-switch toggleSwitchGreen">
+					<label for="contact" class="form-label darkgrey-text fw-500 d-inline">24 hours Access Available</label>
+					<input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+				</div>
+				<div class="mb-4">
+					<label for="access" class="form-label grey-text">Access Instruction (Optional)</label>
+					<input type="email" class="form-control clsBoldText" id="access" value="Enter by south entrance Parking P1 See stacy at gate">
+				</div>
+				<div class="row mb-4">
+					<div class="col-md-6">
+						<div class="col-md-6 d-inline-block me-2">
+						<label for="hourlyRate" class="form-label grey-text">Hourly Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="hourCurrency">
+						  <option selected value="1">USD</option>
+						</select>
+						</div>
+						<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="hourCost" value="1.5">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-6 d-inline-block me-2">
+						<label for="dailyRate" class="form-label grey-text">Daily Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="dailyCurrency">
+						  <option selected value="1">USD</option>
+						</select>
+						</div>
+						<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="dailyCost" value="12.0">
+						</div>
+					</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col-md-6">
+						<div class="col-md-6 d-inline-block me-2">
+						<label for="weeklyRate" class="form-label grey-text">Weekly Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="weeklyCurrency">
+						  <option selected value="1">USD</option>
+						</select>
+						</div>
+						<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="weeklyCost" value="1.5">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-6 d-inline-block me-2">
+						<label for="monthlyRate" class="form-label grey-text">Monthly Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="monthlyCurrency">
+						  <option selected value="1">USD</option>
+						</select>
+						</div>
+						<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="monthlyCost" value="12.0">
+						</div>
+					</div>
+				</div>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn clsBoldText driver-btn">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!--Parking Rates Modal -->
+	<div class="modal fade fs-7" id="parkingRatesModal" tabindex="-1" aria-labelledby="parkingRatesModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="modal-body">
+			<h5 class="modal-title" id="parkingRatesModal">Parking Rates</h5>
+			<div class="row my-4">
+				<div class="col-md-6">
+					<div class="col-md-6 d-inline-block me-2">
+						<label for="hourlyRate" class="form-label grey-text">Hourly Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="hourCurrency" disabled>
+						  <option selected value="1">USD</option>
+						</select>
+					</div>
+					<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="hourCost" value="1.5" disabled>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-6 d-inline-block me-2">
+						<label for="dailyRate" class="form-label grey-text">Daily Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="dailyCurrency" disabled>
+						  <option selected value="1">USD</option>
+						</select>
+					</div>
+					<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="dailyCost" value="12.0" disabled>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="col-md-6 d-inline-block me-2">
+						<label for="weeklyRate" class="form-label grey-text">Weekly Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="weeklyCurrency" disabled>
+						  <option selected value="1">USD</option>
+						</select>
+					</div>
+					<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="weeklyCost" value="1.5" disabled>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-6 d-inline-block me-2">
+						<label for="monthlyRate" class="form-label grey-text">Monthly Rate</label>
+						<select class="form-select grey-text clsFormInputControl" id="monthlyCurrency" disabled>
+						  <option selected value="1">USD</option>
+						</select>
+					</div>
+					<div class="col-md-5 d-inline-block">
+						<input type="text" class="form-control clsBoldText clsFormInputControl" id="monthlyCost" value="12.0" disabled>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!--Parking Instructions Modal -->
+	<div class="modal fade fs-7" id="parkingInstructionsModal" tabindex="-1" aria-labelledby="parkingInstructionsModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="modal-body">
+			<h5 class="modal-title" id="parkingInstructionsModal">Parking Instructions</h5>
+			<p class="darkgrey-text fw-500 mt-4">Enter by south entrance Parking P1 See stacy at gate</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x">
+	<div id="driverCreatedToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header d-none">
+		  <img src="" class="rounded me-2" alt="...">
+		  <strong class="me-auto">Bootstrap</strong>
+		  <small>11 mins ago</small>
+		  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body bg-success bg-gradient text-white">
+			New Driver Added Successfully.
+		</div>
+		</div>
+	</div>
+</div>
+
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		const toastTrigger = document.getElementById('createDiver')
+		const driverCreateToast = document.getElementById('driverCreatedToast')
+		if (toastTrigger) {
+		  toastTrigger.addEventListener('click', () => {
+			const toast = new bootstrap.Toast(driverCreateToast)
+
+			toast.show()
+			const timeout = setTimeout(loginRedirect, 5000);
+			function loginRedirect(){
+				//window.location.href = "login.html";
+			}
+		  })
+		}
+	</script>
+</body>
+</html>

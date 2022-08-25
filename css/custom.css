@@ -537,12 +537,12 @@ body {
     background-color: #3CB296;
     border-color: #3CB296;;
 }
+
 .clsModalPermissionsFooter {
 	padding-top: 0px;
 	padding-bottom: 29px;
 	border: 0px;
 }
-
 
 .fw-500{
 	font-weight:500 !important;
@@ -587,4 +587,9 @@ body {
 
 .clsDisabledText {
 	color: rgba(119, 119, 121, 0.7);
+}
+
+.toggleSwitchGreen .form-check-input:checked {
+    background-color: #3CB296;
+    border-color: #3CB296;;
 }
