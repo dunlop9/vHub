@@ -29,7 +29,7 @@
             </li>
             <li>
                 <a href="#submenu1" data-bs-toggle="collapse" aria-expanded="true" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"> <img class="menu-icon" src="../images/icons/arrow.svg"> Dashboard</span> </a>
-				<ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+				<ul class="collapse nav flex-column ms-1 show" id="submenu1" data-bs-parent="#menu">
 					<li class="w-100">
 						<a href="#" class="nav-link px-0"> <span class=" ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/360.svg"> 360 View</span></a>
 					</li>
@@ -55,7 +55,7 @@
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/invoices.svg"> Invoices</span></a>
 					</li>
 					<li>
-						<a href="drivers.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/drivers.svg"> Drivers</span></a>
+						<a href="drivers.html" class="nav-link px-0 active"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/drivers.svg"> Drivers</span></a>
 					</li>
 					<li>
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/chat.svg"> Chat History</span></a>
@@ -68,9 +68,9 @@
 			<span class="w-75 ms-3 menu-hr"></span>
 			<li>
 				<a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-2 align-middle "> <span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Administration</span></a>
-				<ul class="collapse nav flex-column ms-1 show" id="submenu3" data-bs-parent="#menu">
+				<ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
 					<li>
-						<a href="organizations.html" class="nav-link px-0 active"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
+						<a href="custprofile-org.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
 					</li>
 					<li class="w-100">
 					   <a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/roles.svg"> Roles & Permissions</span></a>
@@ -88,7 +88,7 @@
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-list.svg"> Equipement Listing</span></a>
 					</li>
 					<li>
-						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
+						<a href="driver-management.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
 					</li>
 					<li>
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/parking.svg"> Parking Lot Management</span></a>
@@ -236,11 +236,11 @@
         <div class="col-md-2">
 		</div>        
 		<div class="col-md-3">
-			<span class="grey-text">Company Name (DBA)</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Company Name (DBA)</span> 
 			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Company Name(DBA)" value="Ace Cloud Transportation" aria-label="Company Name(DBA)">
 		</div>
 		<div class="col-md-3">
-			<span class="grey-text">Login vHub as A</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Login vHub as A</span> 
 			<select class="form-select clsFormInputControl" placeholder="Login vHub as A"  aria-label="Login vHub as A">
 			  <option selected value="1">Trailer Owner</option>
 			  <option value="2">Item2</option>
@@ -250,7 +250,7 @@
 			</select>
 		</div>	
 		<div class="col-md-2">
-			<span class="grey-text">Status</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Status</span> 
 			<select class="form-select clsFormInputControl" placeholder="Status"  aria-label="Status">
 			  <option selected value="1">Active</option>
 			  <option value="2">Inactive</option>
@@ -263,15 +263,15 @@
         <div class="col-md-2">
 		</div>
 		<div class="col-md-3">
-			<span class="grey-text">Legal Name</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Legal Name</span> 
 			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Legal Name" value="Ace Clouds" aria-label="Legal Name">
 		</div>		
 		<div class="col-md-3">
-		<span class="grey-text">Address 1</span> <span class="clsFormMandatory">*</span>
+		<span class="grey-text">Address 1</span> 
 		<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Address" aria-label="Address1">
 		</div>
 		<div class="col-md-2">
-			<span class="grey-text">Country</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Country</span> 
 			<select class="form-select clsFormInputControl" placeholder="Select Country"  aria-label="Select Country">
 			  <option value="0">Select</option>
 			  <option selected value="1">United States</option>
@@ -288,15 +288,15 @@
         <div class="col-md-2">
 		</div>  
 		<div class="col-md-3">
-			<span class="grey-text">Transport Commission No. (CTQ,CVOR etc.)</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Transport Commission No. (CTQ,CVOR etc.)</span> 
 			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Transport Commission No. (CTQ,CVOR etc.)" value="CTQ" aria-label="Transport Commission No. (CTQ,CVOR etc.)">
 		</div>	
 		<div class="col-md-3">
-		<span class="grey-text">City</span> <span class="clsFormMandatory">*</span>
+		<span class="grey-text">City</span> 
 		<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter City" aria-label="City">		
 		</div>
 		<div class="col-md-2">
-			<span class="grey-text">Province</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Province</span> 
 			<select class="form-select clsFormInputControl" placeholder="Select Province"  aria-label="Select Province">
 			  <option selected value="0">Select</option>
 			  <option value="1">Province1</option>
@@ -313,12 +313,12 @@
         <div class="col-md-2">
 		</div> 	
 		<div class="col-md-3">
-			<span class="grey-text">Postal Code</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Postal Code</span> 
 			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Postal Code" aria-label="Postal Code">
 		</div>
 
 		<div class="col-md-2">
-			<span class="grey-text">Phone Number</span> <span class="clsFormMandatory">*</span>
+			<span class="grey-text">Phone Number</span> 
 			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Phone Number" aria-label="Phone Number">		
 		</div>
 		<div class="col-md-2">

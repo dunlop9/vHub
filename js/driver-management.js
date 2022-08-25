@@ -1,5 +1,5 @@
 const columnDefs = [
-  { field: "driver", headerName: 'Driver Name', cellRenderer: function (params) {return '<a href="#" class="text-decoration-none">'+params.value+'</a>' }, cellClass: ['clsAnchor'] },
+  { field: "driver", headerName: 'Driver Name', cellRenderer: function (params) {return '<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#editDriverModal">'+params.value+'</a>' }, cellClass: ['clsAnchor'] },
   { field: "contact", headerName: 'Contact Number'  },
   { field: "email", headerName: 'Email'  },
   { field: "lastuptdby", headerName: 'Last Updated By'  },

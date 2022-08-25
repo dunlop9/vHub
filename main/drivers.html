@@ -30,7 +30,7 @@
             </li>
             <li>
                 <a href="#submenu1" data-bs-toggle="collapse" aria-expanded="true" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"> <img class="menu-icon" src="../images/icons/arrow.svg"> Dashboard</span> </a>
-				<ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+				<ul class="collapse nav flex-column ms-1 show" id="submenu1" data-bs-parent="#menu">
 					<li class="w-100">
 						<a href="#" class="nav-link px-0"> <span class=" ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/360.svg"> 360 View</span></a>
 					</li>
@@ -48,7 +48,7 @@
 			<span class="w-75 ms-3 menu-hr"></span>
             <li>
                 <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Reports</span></a>
-				<ul class="collapse nav flex-column ms-1 show" id="submenu2" data-bs-parent="#menu">
+				<ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
 					<li class="w-100">
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equipment.svg"> Equipement</span></a>
 					</li>
@@ -71,7 +71,7 @@
 				<a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-2 align-middle "> <span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Administration</span></a>
 				<ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
 					<li>
-						<a href="organizations.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
+						<a href="custprofile-org.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
 					</li>
 					<li class="w-100">
 					   <a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/roles.svg"> Roles & Permissions</span></a>
@@ -89,7 +89,7 @@
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-list.svg"> Equipement Listing</span></a>
 					</li>
 					<li>
-						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
+						<a href="driver-management.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
 					</li>
 					<li>
 						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/parking.svg"> Parking Lot Management</span></a>
@@ -204,7 +204,7 @@
 			</div>
 		</div>
 		<div class="col-md-2 p-4 pe-3">
-			<button type="button" class="btn float-end clsBoldText driver-btn" style="" data-bs-toggle="modal" data-bs-target="#createDriverModal">Create Driver</button>
+			<button type="button" class="btn float-end clsBoldText driver-btn d-none" style="" data-bs-toggle="modal" data-bs-target="#createDriverModal">Create Driver</button>
 
 			<!--Create Driver Modal -->
 			<div class="modal fade" id="createDriverModal" tabindex="-1" aria-labelledby="createDriverModalLabel" aria-hidden="true">

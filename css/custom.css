@@ -86,6 +86,14 @@ body {
 	height:56px;
 }
 
+.email-input{
+	color: #393C47;
+	background: #FFFFFF;
+	border: 1px solid #EAEAEA;
+	border-radius: 4px;
+	height:40px;
+}
+
 .login-vertical-center {
 		margin: 0;
 		position: absolute;
@@ -217,24 +225,18 @@ body {
 	margin-right:12px;
 }
 
-p > #headerSearch{
-	color: #777779;
+.headerSearch, .headerLang{
+	color: #777779 !important;
 	font-weight: 500;
 }
 
-p > #headerLang{
-	color: #777779;
-	font-weight: 500;
-}
-
-#headerSearch > span:hover{
+.headerSearch > span:hover{
 	color: #373935  !important;
 	border-bottom: 2px Solid #63C1AB;
 }
 
-#headerLang > span:hover{
+.headerLang > span:hover{
 	color: #373935  !important;
-	border-bottom: 2px Solid #63C1AB;
 }
 
 .top-nav{
@@ -268,6 +270,32 @@ p > #headerLang{
 }
 
 .last-accessed > li > a:hover{
+	background: none !important;
+}
+
+.lang-ddl{
+	width: 200px;
+}
+
+.lang-ddl > li > .active{
+	background: rgba(235, 247, 245);
+	border-radius: 4px;
+	color: #373935;
+	font-weight:700;
+	width: 180px !important;
+}
+
+.lang-ddl > li > .active:hover{
+	background: none !important;
+}
+
+.lang-ddl > li:hover{
+	background: rgba(119, 119, 121, 0.05);
+	border-radius: 4px;
+	width: 180px !important;
+}
+
+.lang-ddl > li > a:hover{
 	background: none !important;
 }
 
