@@ -593,3 +593,22 @@ body {
     background-color: #3CB296;
     border-color: #3CB296;;
 }
+.clsFormCtrlError {
+	border: 1px solid #E31B1A;
+}
+
+.clsErrorText {
+	color: #E31B1A;
+	font-size: 14px;
+}
+
+.clsErrorText i{
+	display: inline-block;
+    position: absolute;
+}
+
+.clsErrorText span{
+    display: inline-block;
+    margin-left: 28px;
+    margin-top: -5px;
+}

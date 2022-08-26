@@ -100,20 +100,24 @@
 					<div class="row ms-4 mt-3 me-4 login-vertical-center">
 						<h4 class="darkgrey-text">Welcome!</h4>
 						<p class="pb-4 darkgrey-text fs-7" >Please enter your credentials to login</p>
-						<form class="pb-4 border-bottom">
+						<div class="pb-4 border-bottom">
 							<div class="mb-3">
 								<label class="form-label grey-text fs-7" for="inputEmail">Email</label>
-								<input type="email" class="form-control login-input clsFormInputControl" id="inputEmail" placeholder="Email">
+								<input type="email" class="form-control login-input clsFormInputControl clsFormCtrlError" id="inputEmail" placeholder="Email">
 							</div>
 							<div class="mb-3">
 								<label class="form-label grey-text fs-7" for="inputPassword">Password</label>
-								<input type="password" class="form-control login-input clsFormInputControl" id="inputPassword" placeholder="Password">
+								<input type="password" class="form-control login-input clsFormInputControl clsFormCtrlError" id="inputPassword" placeholder="Password">
+							</div>
+							<div class="mb-3">
+							  <span class="clsErrorText" id="basic-addon1"><i class="fa-solid fa-exclamation-circle"></i> <span>Wrong Credentials entered. Please enter the correct credentials and try to re-login.</span></span>
+							  
 							</div>
 							<div class="mb-3 float-end">
 								<a href="#" class="forgot-text fs-7 text-decoration-none" data-bs-toggle="modal" data-bs-target="#restPasswordModal">Forgot Password?</a>
 							</div>
-							<button type="submit" id="loginBtn" onclick="redirect()" class="btn login-btn w-100">Login</button>
-						</form>
+							<button onclick="redirect()" class="btn login-btn w-100">Login</button>
+						</div>
 						<p class="pt-2 text-center darkgrey-text account fs-7">Don't have an account? <a href="#"class="signup-text text-decoration-underline">Sign Up</a></p>
 					</div>
 				</div>
@@ -128,16 +132,14 @@
 		  <div class="modal-body">
 			<h5 class="modal-title darkgrey-text" id="restPasswordModal">Forgot Password?</h5>
 			<span class="darkgrey-text fs-7">Enter your email amd we will send you a link to get back into your account</span>
-			</form>
 				<div class="mb-4 mt-3">
 					<label class="form-label grey-text fs-7" for="inputEmail">Email</label>
-					<input type="email" class="form-control email-input clsFormInputControl" id="inputEmail" placeholder="Email">
+					<input type="email" class="form-control email-input clsFormInputControl " id="inputEmail" placeholder="Email">
 				</div>
 				<div class="mb-3 float-end">
 					<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
 					<button type="submit" class="btn clsBoldText driver-btn" data-bs-dismiss="modal" id="passwordResetBtn">Reset Password</button>
 				</div>
-			</form>
 		  </div>
 		</div>
 	  </div>
@@ -174,8 +176,7 @@
 	  })
 	}
     function redirect() {
-   let url = "../main/main.html";
-   location.href = url;
+   window.location.href = "main.html";
 }
 </script>
 </body>
