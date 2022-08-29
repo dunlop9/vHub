@@ -332,6 +332,9 @@ body {
 .clsNoRightMargin {
 	margin-right: 0px !important;
 }
+.clsNoLeftMargin {
+	margin-left: 0px !important;
+}
 .clsStandardText {
 	font-size: 14px;
 	font-weight: 400;

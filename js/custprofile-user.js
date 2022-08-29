@@ -4,7 +4,7 @@ const columnDefs = [
   { field: "lastname", headerName: 'Last Name'  },
   { field: "contactnumber", headerName: 'Contact Number'  },
   { field: "department", headerName: 'Department'  },
-  { field: "sttus", headerName: 'Status'  }
+  { field: "status", headerName: 'Status', cellRenderer: function (params) { if (params.value=="Invited"){return 'Invited <a href="#" class="text-decoration-none ps-3" >Resend</a>'} else {return params.value} } }
 ];
 
 // specify the data
@@ -13,7 +13,7 @@ const rowData = [
   { email: "alan.shore@ttl.com", firstname: "Alan", lastname: "Shore", contactnumber: "+1 (773) 404-2827", department: "Admin", status: "Active"},
   { email: "ray.redington@ttl.com", firstname: "Ray", lastname: "Redington", contactnumber: "+1 (773) 404-2827", department: "Administration", status: "Active"},
   { email: "hansie.cronje@ttl.com", firstname: "Hansie", lastname: "Cronje", contactnumber: "+1 (773) 404-2827", department: "Finance", status: "Active"},
-  { email: "alan.shore@ttl.com", firstname: "Alan", lastname: "Shore", contactnumber: "+1 (773) 404-2827", department: "Finance", status: "Invited <a href='#'> Resend </a>"},
+  { email: "alan.shore@ttl.com", firstname: "Alan", lastname: "Shore", contactnumber: "+1 (773) 404-2827", department: "Finance", status: "Invited"},
   { email: "ray.redington@ttl.com", firstname: "Ray", lastname: "Redington", contactnumber: "+1 (773) 404-2827", department: "Maintenance", status: "Inactive"}
 ];
 
