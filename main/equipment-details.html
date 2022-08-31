@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vHub | Smart Trailer Sharing &  Repositioning</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/custom.css">
+	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+	<link rel="icon" href="../images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+	<script src="../js/equipment-details.js"></script>
+</head>
+<body>
+<div class="offcanvas offcanvas-start w-22" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header  d-none">
+       
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start fs-7" id="menu">
+            <li class="nav-item">
+                <div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+				  <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+				</div>
+            </li>
+            <li>
+                <a href="#submenu1" data-bs-toggle="collapse" aria-expanded="true" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"> <img class="menu-icon" src="../images/icons/arrow.svg"> Dashboard</span> </a>
+				<ul class="collapse nav flex-column ms-1 show" id="submenu1" data-bs-parent="#menu">
+					<li class="w-100">
+						<a href="#" class="nav-link px-0"> <span class=" ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/360.svg"> 360 View</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/map.svg"> Map Download</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/live.svg"> Live Dashboard</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/reservation.svg"> Reservations</span></a>
+					</li>
+				</ul>
+            </li>
+			<span class="w-75 ms-3 menu-hr"></span>
+            <li>
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-2 align-middle"><span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Reports</span></a>
+				<ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+					<li class="w-100">
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equipment.svg"> Equipment</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/invoices.svg"> Invoices</span></a>
+					</li>
+					<li>
+						<a href="drivers.html" class="nav-link px-0 active"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/drivers.svg"> Drivers</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/chat.svg"> Chat History</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/sale.svg"> Assets for Sale</span></a>
+					</li>
+				</ul>
+            </li>
+			<span class="w-75 ms-3 menu-hr"></span>
+			<li>
+				<a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-2 align-middle "> <span class=" d-none d-sm-inline"><img class="menu-icon" src="../images/icons/arrow.svg"> Administration</span></a>
+				<ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+					<li>
+						<a href="custprofile-org.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/cust-profile.svg"> Customer Profile</span></a>
+					</li>
+					<li class="w-100">
+					   <a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/roles.svg"> Roles & Permissions</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/user-mgmt.svg"> User Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/asset-mgmt.svg"> Asset Type Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-mgmt.svg"> Equipment Type Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/equip-list.svg"> Equipment Listing</span></a>
+					</li>
+					<li>
+						<a href="driver-management.html" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/driver-mgmt.svg"> Driver Management</span></a>
+					</li>
+					<li>
+						<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/parking.svg"> Parking Lot Management</span></a>
+					</li>
+				</ul>
+			</li>
+			<span class="w-75 ms-3 menu-hr"></span>
+			<li>
+				<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/notifications.svg"> Notifications</span></a>
+			</li>
+			<li>
+				<a href="#" class="nav-link px-0"><span class="ps-1 d-none d-sm-inline"><img class="menu-icon" src="../images/icons/api.svg"> API</span></a>
+			</li>
+        </ul>
+    </div>
+</div>
+<header>
+	<nav class="navbar top-nav sticky-top bg-white">
+		<div class="container-fluid">
+			<button class="btn float-end navbar-btn active p-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+			<a class="navbar-brand ms-4" href="https://www.vhubapp.com/" target="_blank">
+				<img src="../images/logo.png" />
+				<!--<div class="logo"></div>-->
+			</a>
+			<div class="navbar-nav flex-row ms-md-auto pe-0">
+				<form class="d-flex" role="search">
+				  <input class="form-control me-3 mt-1 nav-search" type="search" placeholder="Search" aria-label="Search">
+				</form>
+				<span class="nav-separator mt-1 fs-5"> | </span>
+				<ul class="navbar-nav flex-row flex-wrap">
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
+					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
+					<span class="nav-separator mt-1 fs-5 pe-3"> | </span>
+					<li class="nav-item col-6 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
+					<li class="nav-item col-6 col-lg-auto mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
+					<li class="nav-item dropdown ms-3 me-1 mt-1">
+					  <a class="nav-link  grey-text fs-7" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+						<img src="../images/icons/arrow-down.svg">
+					  </a>
+					  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start user-profile fs-7">
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/profile.svg" class="me-2"> My Profile</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/change-pass.svg" class="me-2"> Change Password</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/notifications-grey.svg" class="me-2"> Notifications</a></li>
+						<li class="form-switch ps-0 py-2 mx-2"><a class="dropdown-item darkgrey-text d-inline" href="#"><img src="../images/icons/language.svg" class="me-2"> Francais</a> <input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/switch.svg" class="me-2"> Switch Customer</a></li>
+						<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#"><img src="../images/icons/logout.svg" class="me-2"> Logout</a></li>
+					  </ul>
+					</li>
+					<li  class="nav-item col-6 col-lg-auto"></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="bg-breadcrumb">
+	    <div class="row me-0">
+		  <div class="col-10">
+			<ol class="breadcrumb fs-7 ms-2 pt-1">
+				<li class="breadcrumb-item"><a href="#" class="darkgrey-text text-decoration-none">Configuration</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Equipment</li>
+			</ol>
+		  </div>
+		  
+		  <div class="col-2">
+			  <a class="nav-link  grey-text fs-7 pt-1 pe-1 text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+				Last Accessed <img class="breadcrumb-lastarrow" src="../images/icons/arrow-down.svg">
+			  </a>
+			  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start last-accessed clsLastAccessedMenu fs-7 ">
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Notifications</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Live Dashboard</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Reservations</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Equipment</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Invoices</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Drivers</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Chat History</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Equipment Listing</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Customer Profile</a></li>
+				<li class="py-2 mx-2"><a class="dropdown-item darkgrey-text" href="#">Drivers</a></li>
+			  </ul>
+		  </div>
+	    </div>
+	</nav>
+</header>
+<div class="container-fluid mt-4 pt-1">
+	<div class="row fs-7">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="row mb-4">
+				<h5 class="mb-4">General Details</h5>
+				<div class="col-md-3">
+					<span class="grey-text">Asset Type</span>
+					<select class="form-select clsBoldText" aria-label="Default select example">
+					  <option >Select</option>
+					  <option selected value="1">Trailer</option>
+					  <option value="2">Truck</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<span class="grey-text">Unit Number</span>
+					<select class="form-select clsBoldText" aria-label="Default select example">
+					  <option >Select</option>
+					  <option selected value="1">1543154</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block me-0 float-end"></div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row fs-7 mt-3">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block me-0 float-end"></div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row fs-7 mt-3">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+			<div class="col-md-1 equip-boxes d-inline-block"></div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+    <div class="row fs-7 mt-4 pt-2">
+        <div class="col-md-2">
+		</div>        
+		<div class="col-md-3">
+			<span class="grey-text">VIN Number</span> 
+			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Company Name(DBA)" value="ERWUOR232020202" aria-label="Company Name(DBA)">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Brand</span> 
+			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Brand" value="Alutrec" aria-label="Legal Name">
+		</div>		
+		<div class="col-md-2">
+		<span class="grey-text">Model</span> 
+		<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Model" aria-label="Address1" value="Jameison">
+		</div>			
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Year</span> 
+			<select class="form-select clsFormInputControl" placeholder="Year"  aria-label="Login vHub as A">
+			  <option selected value="1">2022</option>
+			  <option value="2">2021</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Number of Axels</span> 
+			<select class="form-select clsFormInputControl" placeholder="No Of Axels"  aria-label="axels">
+			  <option selected value="1">6</option>
+			  <option value="2">4</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Length of Trailer</span> 
+			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Length of Trailer" aria-label="trailer" value="40">		
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Liscense Plate Number</span> 
+			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Liscense Plate Number" aria-label="trailer" value="CA 0187438F">		
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Annual Mechanical Inspection Expiration Date</span> 
+			<select class="form-select clsFormInputControl equip-duration" placeholder="Month"  aria-label="month">
+			  <option selected value="August">August</option>
+			  <option value="July">July</option>
+			</select>
+			<select class="form-select clsFormInputControl equip-duration float-end" placeholder="Year"  aria-label="year">
+			  <option selected value="1">2022</option>
+			  <option value="2">2021</option>
+			</select>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<div class="clsFormSectionSep"></div>
+			<span class="clsFormSectionHeading">Specifications</span>
+			<span class="fs-7 fw-500 mt-3 d-block">Specifications Required</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Axle Spread</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Axle Spread">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Tire Inflation System</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Tire Inflation System">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Skirts</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Skirts">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Pintle Hook</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Pintle Hook">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Hazmat Placard</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Hazmat Placard">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Suspension</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Suspension">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<span class="fs-7 fw-500 mt-3 pt-1 d-block">Trailer</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Rear Door</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Rear Door">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Side Door</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Side Door">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Roof</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Roof">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Floor</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Floor">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Floor Type</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Floor Type">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Interior Finish</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Interior Finish">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-3">
+			<span class="grey-text">Logistics Posts Distance</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Logistics Posts Distance">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Double Deck Beams</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Double Deck Beams">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<span class="fs-7 fw-500 mt-3 pt-1 d-block">Lift</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Lift</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Lift">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Lift Type</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Lift Type">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Unit Capacity</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Unit Capacity">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-3">
+			<span class="grey-text">Floor</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Floor">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<span class="fs-7 fw-500 mt-3 pt-1 d-block">Temperature Control</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<span class="grey-text">Unit Make</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Unit Make">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+			<span class="grey-text">Unit Model</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Unit Model">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<span class="grey-text">Unit Year</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Unit Year">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>		
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-3">
+			<span class="grey-text">Multi Temperature</span> 
+			<select class="form-select clsFormInputControl grey-text" placeholder=""  aria-label="Multi Temperature">
+			  <option selected value="1">Select</option>
+			</select>
+		</div>	
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<div class="clsFormSectionSep"></div>
+			<span class="clsFormSectionHeading">Equipment Photos</span>
+				<!-- Upload  -->
+			<div class="upload-border mt-3">
+				<form id="file-upload-form" class="uploader">
+				  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+				  <label for="file-upload" id="file-drag" class="pb-3">
+					<img id="file-image" src="#" alt="Preview" class="hidden">
+					<div id="start">
+					  <img src="../images/icons/image-upload.svg" class="upload-imageIcon mb-4 pb-2">
+					  <div class="fs-7 darkgrey-text fw-500">Drag & Drop your photos here or Browse Photos</div>
+					  <div class="fs-7 grey-text">Max 10 mb</div>
+					  <div id="notimage" class="hidden">Please select an image</div>
+					  <!--<span id="file-upload-btn" class="btn btn-primary">Select a file</span>-->
+					</div>
+					<div id="response" class="hidden">
+					  <div id="messages"></div>
+					</div>
+				  </label>
+				</form>
+				<div>
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin mt-4">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<span class="clsFormSectionHeading">Damages</span>
+			<!-- Upload  -->
+			<div class="upload-border mt-3">
+				<form id="file-upload-form" class="uploader">
+				  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+				  <label for="file-upload" id="file-drag" class="pb-3">
+					<img id="file-image" src="#" alt="Preview" class="hidden">
+					<div id="start">
+					  <img src="../images/icons/image-upload.svg" class="upload-imageIcon mb-4 pb-2">
+					  <div class="fs-7 darkgrey-text fw-500">Drag & Drop your photos here or Browse Photos</div>
+					  <div class="fs-7 grey-text">Max 10 mb</div>
+					  <div id="notimage" class="hidden">Please select an image</div>
+					  <!--<span id="file-upload-btn" class="btn btn-primary">Select a file</span>-->
+					</div>
+					<div id="response" class="hidden">
+					  <div id="messages"></div>
+					</div>
+				  </label>
+				</form>
+				<div>
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/img(25).jpg" class="upload-thumbnail m-3 ms-0">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<div class="clsFormSectionSep"></div>
+			<span class="clsFormSectionHeading">Instructions</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<p class="fs-7 grey-text">These instructions will be requested of the drivers to apply and confirm at the beginning and at the end of the rental. These instructions may also assist the driver if needed.</p>
+			<div class="row">
+				<div class="col-md-6">
+					<span class="fs-7 fw-500 mt-2 d-block">Activation Instructions</span>
+					<textarea class="form-control grey-text fs-7 mt-2" id="exampleFormControlTextarea1" rows="3" placeholder="Please enter your instructions"></textarea>
+				</div>
+				<div class="col-md-6">
+					<span class="fs-7 fw-500 mt-2 d-block">Deactivation Instructions</span>
+					<textarea class="form-control grey-text fs-7 mt-2" id="exampleFormControlTextarea1" rows="3" placeholder="Please enter your instructions"></textarea>
+				</div>
+			</div>
+		</div>	
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<div class="clsFormSectionSep"></div>
+			<span class="clsFormSectionHeading">Documents Upload</span>
+			<!-- Upload  -->
+			<div class="upload-border mt-3">
+				<!-- <form id="file-upload-form" class="uploader">
+				  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+				  <label for="file-upload" id="file-drag" class="pb-3">
+					<img id="file-image" src="#" alt="Preview" class="hidden">
+					<div id="start">
+					  <img src="../images/icons/doc-upload.svg" class="upload-imageIcon mb-4 pb-1">
+					  <div class="fs-7 darkgrey-text fw-500">Drag & Drop your files here or Browse Files</div>
+					  <div class="fs-7 grey-text">JPG, PNG, PDF (Max 10 mb)</div>
+					  <div id="notimage" class="hidden">Please select an image</div>
+					</div>
+					<div id="response" class="hidden">
+					  <div id="messages"></div>
+					</div>
+				  </label>
+				</form> -->
+				<form id="" class="uploader">
+				  <label for="" id="" class="pb-3 text-center" data-bs-toggle="modal" data-bs-target="#documentUploadModal">
+					<div id="start">
+					  <img src="../images/icons/doc-upload.svg" class="upload-imageIcon mb-4 pb-1">
+					  <div class="fs-7 darkgrey-text fw-500">Drag & Drop your files here or Browse Files</div>
+					  <div class="fs-7 grey-text">JPG, PNG, PDF (Max 10 mb)</div>
+					</div>
+				  </label>
+				</form>
+				<div>
+					<img src="../images/icons/document.svg" class="upload-thumbnail m-3">
+					<img src="../images/icons/document.svg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/icons/document.svg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/icons/document.svg" class="upload-thumbnail m-3 ms-0">
+					<img src="../images/icons/document.svg" class="upload-thumbnail m-3 ms-0">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>	
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<div class="clsFormSectionSep"></div>
+			<span class="clsFormSectionHeading">Pricing</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<p class="fs-7 grey-text">These are the rates that will apply for this rental. vHub will charge a fee in addition to these rates. Please refer to our <a href="#">Payment Terms</a> for full details.</p>
+			<div class="row mx-0">
+				<div class="col-md-4 equip-pricingBox me-3">
+					<img src="../images/icons/price-date.svg" class="mt-4 mb-2">
+					<div class="fs-6 darkgrey-text fw-500 mb-3">Daily Rate</div>
+					<div>
+						<input type="text" class="form-control darkgrey-text equip-pricingInput fw-500 text-center" placeholder="Daily Rate" value="USD $20.00"/>
+						<span class="fw-500 darkgrey-text">/ DAY</span>
+					</div>
+				</div>
+				<div class="col-md-4 equip-pricingBox me-3">
+					<img src="../images/icons/price-distance.svg" class="mt-4 mb-2">
+					<div class="fs-6 darkgrey-text fw-500 mb-3">Distance Rate</div>
+					<div>
+						<input type="text" class="form-control darkgrey-text equip-pricingInput fw-500 text-center" placeholder="Daily Rate" value="USD $2.00"/>
+						<span class="fw-500 darkgrey-text">/ MI</span>
+					</div>
+				</div>
+				<div class="col-md-4 equip-pricingBox">
+					<img src="../images/icons/price-engine.svg" class="mt-4 mb-2">
+					<div class="fs-6 darkgrey-text fw-500 mb-3">Engine Rate</div>
+					<div>
+						<input type="text" class="form-control darkgrey-text equip-pricingInput fw-500 text-center" placeholder="Daily Rate" value="USD $0.00"/>
+						<span class="fw-500 darkgrey-text">/ HOUR</span>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="col-md-2">
+		</div> 
+    </div>
+	<div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div> 	
+		<div class="col-md-8">
+			<div class="clsFormSectionSep"></div>
+			<span class="clsFormSectionHeading">General Settings</span>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+    <div class="row fs-7 clsFormStandardTopMargin">
+        <div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<div class="row mx-0">
+				<div class="col-md-6 ps-0">
+					<span class="darkgrey-text fw-500">Additional emails for renting notifications (Comma separated)</span> 
+				</div>
+				<div class="col-md-6 pe-0">
+					<span class="darkgrey-text fw-500">Security Deposit (Optional. vHub keeps the amount during reservation)</span> 
+				</div>	
+			</div>
+			<div class="row mx-0">
+				<div class="col-md-6 ps-0">
+					<input type="text" class="form-control clsStandardText" placeholder="Please enter email" aria-label="emails">
+				</div>
+				<div class="col-md-6 pe-0"> 
+					<input type="text" class="form-control clsStandardText" placeholder="Enter Amount" aria-label="amount">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+    </div>
+	
+    <div class="row fs-7 equip-bottomBtns">
+        
+		<div class="col-md-12 clsAlignRight my-3">
+		<button class="btn clsFormButtonNormal">Discard Changes</button>
+		<button type="submit" class="btn clsFormButtonDefault">Save</button>
+		</div>
+		
+    </div>	
+	
+	<!--Document Upload Modal -->
+	<div class="modal fade fs-7" id="documentUploadModal" tabindex="-1" aria-labelledby="documentUploadModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="modal-body px-4">
+			<h5 class="modal-title" id="documentUploadModal">New Document</h5>
+			<p class="darkgrey-text fw-500 mt-4">Information</p>
+			<div class="">
+				<span class="grey-text">Name</span> 
+				<input type="text" class="form-control clsStandardText clsFormInputControl mt-2" placeholder="Document Name" aria-label="name" value="Document 1">		
+			</div>
+			<div class="mt-4">
+				<span class="grey-text">Visibility</span>
+				<div class="btn-group equip-popupBtns mt-2" role="group" aria-label="Basic outlined example">
+				  <button type="button" class="btn fs-7 fw-500 active"><img src="../images/icons/private.svg" class="me-2">Private</button>
+				  <button type="button" class="btn fs-7 fw-500"><img src="../images/icons/renters.svg" class="me-2">Renters</button>
+				  <button type="button" class="btn fs-7 fw-500 last"><img src="../images/icons/public.svg" class="me-2">Public</button>
+				</div>
+			</div>
+			<div class="mt-4">
+				<p class="darkgrey-text fw-500 mt-4">Upload File</p>
+				<!-- Upload  -->
+				<div class="upload-border-popup mt-3">
+					<form id="file-upload-form" class="uploader uploader-popup">
+					  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+					  <label for="file-upload" id="file-drag" class="py-4">
+						<div id="start">
+						  <img src="../images/icons/doc-upload.svg" class="upload-popup-imageIcon mb-3">
+						  <div class="fs-7 darkgrey-text fw-500">Drag & Drop your photos here or Browse Photos</div>
+						</div>
+					  </label>
+					</form>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer px-4">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+			<button type="submit" class="btn clsBoldText driver-btn" data-bs-dismiss="modal" id="submit">Submit</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

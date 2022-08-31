@@ -620,3 +620,198 @@ body {
 	margin-left: 16px;
     margin-right: 16px;
 }
+
+.equip-boxes{
+	height: 102px;
+	border: 1px solid #777779;
+	border-radius: 4px;
+	width:106px;
+	margin-right: 16px;
+}
+
+.equip-duration{
+	width:47%;
+	display: inline-block;
+}
+
+.equip-pricingBox{
+	border: 1px solid rgba(119, 119, 121, 0.2);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	height: 192px;
+	text-align: center;
+	width: 318px;
+}
+.equip-pricingBox span{
+	opacity:0.8;
+}
+.equip-pricingInput{
+	height: 44px;
+    border: 1px solid rgba(119, 119, 121, 0.4);
+    border-radius: 4px;
+	padding: 0px 12px;
+	width: 180px;
+    display: inline-block;
+}
+
+.equip-bottomBtns{
+	margin-top: 32px;
+	border-top: 1px solid rgba(119, 119, 121, 0.2);
+    box-shadow: 0px -2px 4px rgb(0 0 0 / 10%);
+}
+
+.equip-popupBtns{
+	background: #FFFFFF;
+	border: 1px solid rgba(119, 119, 121, 0.2);
+	border-radius: 4px;
+	width:100%;
+}
+
+.equip-popupBtns .btn{
+	border-right: 1px solid rgba(119, 119, 121, 0.2);
+}
+
+.equip-popupBtns .last{
+	border-right: 0px;
+}
+
+.equip-popupBtns .active{
+	background: #EFC300;
+	border-radius: 4px 0px 0px 4px;
+}
+
+/*file upload styles*/
+
+.upload-border{
+	border: 1px dashed rgba(119, 119, 121, 0.4);
+	border-radius: 4px;
+	height: 204px;
+}
+
+.upload-border-popup{
+	border: 1px dashed rgba(119, 119, 121, 0.4);
+	border-radius: 4px;
+	height: 143px;
+}
+
+.upload-imageIcon{
+	width:60px;
+}
+
+.upload-popup-imageIcon{
+	width:40px;
+}
+
+.upload-thumbnail{
+	width:75px;
+	height:75px;
+}
+
+.uploader {
+  display: block;
+  clear: both;
+  width: 50%;
+}
+
+.uploader-popup{
+	width:100%;
+}
+
+.uploader-popup label{
+	border:0px !important;
+}
+
+.uploader label {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border-right: 1px dashed rgba(119, 119, 121, 0.4);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.uploader label:hover {
+  border-color: rgba(119, 119, 121, 0.4);
+}
+.uploader label.hover {
+  border-right: 1px dashed rgba(119, 119, 121, 0.4);
+}
+.uploader label.hover #start i.fa {
+  transform: scale(0.8);
+  opacity: 0.3;
+}
+.uploader #start {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.uploader #start.hidden {
+  display: none;
+}
+.uploader #start img {
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.uploader #response {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.uploader #response.hidden {
+  display: none;
+}
+.uploader #response #messages {
+  margin-bottom: 0.5rem;
+}
+.uploader #file-image {
+  display: inline;
+  margin: 0 auto 0.5rem auto;
+  width: auto;
+  height: auto;
+  max-width: 180px;
+}
+.uploader #file-image.hidden {
+  display: none;
+}
+.uploader #notimage {
+  display: block;
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.uploader #notimage.hidden {
+  display: none;
+}
+/*.uploader progress, .uploader .progress {
+  display: inline;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 180px;
+  height: 8px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #eee;
+  overflow: hidden;
+}
+.uploader .progress[value]::-webkit-progress-bar {
+  border-radius: 4px;
+  background-color: #eee;
+}
+.uploader .progress[value]::-webkit-progress-value {
+  background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+  border-radius: 4px;
+}
+.uploader .progress[value]::-moz-progress-bar {
+  background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+  border-radius: 4px;
+}*/
+.uploader input[type="file"] {
+  display: none;
+}
+.uploader div {
+  margin: 0 0 0.5rem 0;
+  color: #5f6982;
+}
