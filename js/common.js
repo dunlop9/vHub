@@ -46,6 +46,18 @@ function openlink(pageno){
 	}else if(pageno==13)
 	{
 		page="org-users.html";
+	}else if(pageno==14)
+	{
+		page="custprofile-org.html";
+	}else if(pageno==15)
+	{
+		page="custprofile-finance.html";
+	}else if(pageno==16)
+	{
+		page="custprofile-user.html";
+	}else if(pageno==17)
+	{
+		page="custprofile-pricing.html";
 	}
 	window.location.href = page;
 }
