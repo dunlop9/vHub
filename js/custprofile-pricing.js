@@ -1,20 +1,18 @@
 const columnDefs = [
-  { field: "email", headerName: 'Email ID', cellRenderer: function (params) {return '<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#editUserModal">'+params.value+'</a>' }, cellClass: ['clsAnchor'] },
-  { field: "firstname", headerName: 'First Name'  },
-  { field: "lastname", headerName: 'Last Name'  },
-  { field: "contactnumber", headerName: 'Contact Number'  },
-  { field: "department", headerName: 'Department'  },
-  { field: "status", headerName: 'Status', cellRenderer: function (params) { if (params.value=="Invited"){return 'Invited <a href="#" class="text-decoration-none ps-3" >Resend</a>'} else {return params.value} } }
+  { field: "type", headerName: 'Equipment Type'},
+  { field: "dailyrate", headerName: 'Daily Rate'  },
+  { field: "distancerate", headerName: 'Distance Rate'  },
+  { field: "enginerate", headerName: 'Engine Rate'  }
 ];
 
 // specify the data
 const rowData = [
-  { email: "hansie.cronje@ttl.com", firstname: "Hansie", lastname: "Cronje", contactnumber: "+1 (773) 404-2827", department: "Administration", status: "Active"},
-  { email: "alan.shore@ttl.com", firstname: "Alan", lastname: "Shore", contactnumber: "+1 (773) 404-2827", department: "Admin", status: "Active"},
-  { email: "ray.redington@ttl.com", firstname: "Ray", lastname: "Redington", contactnumber: "+1 (773) 404-2827", department: "Administration", status: "Active"},
-  { email: "hansie.cronje@ttl.com", firstname: "Hansie", lastname: "Cronje", contactnumber: "+1 (773) 404-2827", department: "Finance", status: "Active"},
-  { email: "alan.shore@ttl.com", firstname: "Alan", lastname: "Shore", contactnumber: "+1 (773) 404-2827", department: "Finance", status: "Invited"},
-  { email: "ray.redington@ttl.com", firstname: "Ray", lastname: "Redington", contactnumber: "+1 (773) 404-2827", department: "Maintenance", status: "Inactive"}
+  { type: "Dry Van", dailyrate: "CAD $20", distancerate: "CAD $0.05", enginerate: "CAD $1.50"},
+  { type: "Plate Dry Van", dailyrate: "CAD $20", distancerate: "CAD $0.05", enginerate: "CAD $1.50"},
+  { type: "Storage Van", dailyrate: "CAD $20", distancerate: "CAD $0.05", enginerate: "CAD $1.50"},
+  { type: "Reefer", dailyrate: "CAD $20", distancerate: "CAD $0.05", enginerate: "CAD $1.50"},
+  { type: "Heated Van", dailyrate: "CAD $20", distancerate: "CAD $0.05", enginerate: "CAD $1.50"},
+  { type: "Flatbed", dailyrate: "CAD $20", distancerate: "CAD $0.05", enginerate: "CAD $1.50"}
 ];
 
 // let the grid know which columns and what data to use

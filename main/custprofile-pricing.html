@@ -205,11 +205,11 @@
 
 
 <div class="row fs-7 clsNoLeftMargin clsNoRightMargin">
-	<div class="col-md-10">
-
+	<div class="col-md-10 p-3 mt-3">
+		<span class="clsCustProfDefPricingTxt clsBoldText">Default Pricing - </span> <span class="clsStandardText"> All the pricing is in Canadian Dollar </span>
 	</div>
 	<div class="col-md-2 p-3 mt-1">
-		<button type="button" class="btn float-end clsBoldText driver-btn clsGridMargin" data-bs-toggle="modal" data-bs-target="#inviteUserModal">Edit</button>
+		<button class="btn float-end clsFormButtonNormal clsGridMargin" data-bs-toggle="modal" data-bs-target="#inviteUserModal">Edit</button>
 	</div>
 </div>
 <div class="row clsNoLeftMargin clsNoRightMargin">
@@ -217,8 +217,41 @@
 		<div id="myGrid" style="height: 305px;" class="ag-theme-alpine clsGridMargin"></div>
 	</div>
 </div>
-<div class="clsCustProfileBtnSection">
+<div class="row clsNoLeftMargin clsNoRightMargin mt-4">
+	<div col-md-12>
+		<div class="accordion clsGridMargin" id="accordionExample">
+			<div class="accordion-item">
+			<h2 class="accordion-header" id="headingOne">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				Conditions & Restrictions
+				</button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+				<div class="accordion-body">
+				<strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+				</div>
+			</div>
+			</div>
+			<div class="accordion-item  mt-3">
+			<h2 class="accordion-header" id="headingTwo">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				Equipment Geo Restrictions
+				</button>
+			</h2>
+			<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+				<div class="accordion-body">
+				<strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="clsCustProfileBottomBtnSection">
+</div>
+
+
+
 <div class="row fs-7 clsNoLeftMargin clsNoRightMargin">	
 	<div class="col-md-12">
 		<div class="my-3 float-end clsGridMargin">
@@ -227,6 +260,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 <!--Invite User Modal -->
 <div class="modal fade" id="inviteUserModal" tabindex="-1" aria-hidden="true">
