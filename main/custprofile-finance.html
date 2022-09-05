@@ -232,7 +232,7 @@
 			<p class="fw-500"><span class="me-5"><a href="#" class="text-decoration-none"><img src="../images/icons/doc-blue.svg" class="me-2"> FP2506Form-1908239889 <img src="../images/icons/download-blue.svg" class="ms-4"></a><img src="../images/icons/delete-red.svg" class="ms-2"></span> <span class="me-5"><a href="#" class="text-decoration-none"><img src="../images/icons/doc-blue.svg" class="me-2"> FP2506Form-1908239889 <img src="../images/icons/download-blue.svg" class="ms-4"></a><img src="../images/icons/delete-red.svg" class="ms-2"></span></p>
 		</div>
 		<div class="col-md-2">
-			<p class="fw-500"><a href="#" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p> 
+			<p class="fw-500"><a href="#" data-bs-toggle="modal" data-bs-target="#documentUploadModal" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p> 
 		</div>
 		<div class="col-md-2"></div>
     </div>
@@ -252,7 +252,7 @@
 		</div>
 		<div class="col-md-3 mt-auto">
 			<span class="grey-text"></span> 
-			<p class="grey-text mb-2 fw-500"><a href="#" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
+			<p class="grey-text mb-2 fw-500"><a href="#" data-bs-toggle="modal" data-bs-target="#documentUploadModal" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
 		</div>
 		<div class="col-md-2">
 			
@@ -283,7 +283,7 @@
 			<p class="grey-text fw-500 mt-4"><a href="#" class="text-decoration-none"><img src="../images/icons/download-blue.svg" class="me-2">Download W-9 Form </a>(for US companies)</p>
 		</div>
 		<div class="col-md-3 mt-auto"> 
-			<p class="darkgrey-text mb-4 fw-500"><a href="#" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
+			<p class="darkgrey-text mb-4 fw-500"><a href="#" data-bs-toggle="modal" data-bs-target="#documentUploadModal" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
 			<p class="fw-500"><span class="me-5 mt-4"><a href="#" class="text-decoration-none"><img src="../images/icons/doc-blue.svg" class="me-2"> FP2506Form-1908239889 <img src="../images/icons/download-blue.svg" class="ms-4"></a><img src="../images/icons/delete-red.svg" class="ms-2"></span></p>
 		</div>
 		<div class="col-md-2">
@@ -379,7 +379,7 @@
 			<p class="fw-500"><span class="me-5 "><a href="#" class="text-decoration-none"><img src="../images/icons/doc-blue.svg" class="me-2"> FP2506Form-1908239889 <img src="../images/icons/download-blue.svg" class="ms-4"></a><img src="../images/icons/delete-red.svg" class="ms-2"></span></p>
 		</div>
 		<div class="col-md-2 mt-auto">
-			<p class="grey-text mb-3 fw-500"><a href="#" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
+			<p class="grey-text mb-3 fw-500"><a href="#" data-bs-toggle="modal" data-bs-target="#documentUploadModal" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
 		</div>
 		<div class="col-md-2"></div>
     </div>
@@ -474,7 +474,7 @@
 			<p class="fw-500"><span class="me-5 mt-4"><a href="#" class="text-decoration-none"><img src="../images/icons/doc-blue.svg" class="me-2"> FP2506Form-1908239889 <img src="../images/icons/download-blue.svg" class="ms-4"></a><img src="../images/icons/delete-red.svg" class="ms-2"></span></p>
 		</div>
 		<div class="col-md-3 mt-auto">
-			<p class="grey-text mb-3 fw-500"><a href="#" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
+			<p class="grey-text mb-3 fw-500"><a href="#" data-bs-toggle="modal" data-bs-target="#documentUploadModal" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
 		</div>
 		<div class="col-md-2"></div>
 		<div class="col-md-2"></div>
@@ -528,7 +528,7 @@
 			<p class="fw-500"><span class="me-5 mt-4"><a href="#" class="text-decoration-none"><img src="../images/icons/doc-blue.svg" class="me-2"> FP2506Form-1908239889 <img src="../images/icons/download-blue.svg" class="ms-4"></a><img src="../images/icons/delete-red.svg" class="ms-2"></span></p>
 		</div>
 		<div class="col-md-3 mt-auto">
-			<p class="grey-text mb-3 fw-500"><a href="#" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
+			<p class="grey-text mb-3 fw-500"><a href="#" data-bs-toggle="modal" data-bs-target="#documentUploadModal" class="text-decoration-none"><img src="../images/icons/upload-blue.svg"class="me-2">Upload Form</a></p>
 		</div>
 		<div class="col-md-2"></div>
 		<div class="col-md-2"></div>
@@ -538,6 +538,33 @@
 			<button class="btn clsFormButtonNormal">Discard Changes</button>
 			<button type="submit" class="btn clsFormButtonDefault">Save & Next</button>
 		</div>
+	</div>
+	<!--Document Upload Modal -->
+	<div class="modal fade fs-7" id="documentUploadModal" tabindex="-1" aria-labelledby="documentUploadModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+		  <div class="modal-body px-4">
+			<h5 class="modal-title" id="documentUploadModal">Upload Files</h5>
+			<div class="mt-4">
+				<!-- Upload  -->
+				<div class="upload-border-popup mt-3">
+					<form id="file-upload-form" class="uploader uploader-popup">
+					  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+					  <label for="file-upload" id="file-drag" class="py-4">
+						<div id="start">
+						  <img src="../images/icons/doc-upload.svg" class="upload-popup-imageIcon mb-3">
+						  <div class="fs-7 darkgrey-text fw-500">Drag & Drop your photos here or Browse Photos</div>
+						</div>
+					  </label>
+					</form>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer px-4">
+			<button type="button" class="btn clsBoldText me-2 cancel-btn" data-bs-dismiss="modal">Cancel</button>
+		  </div>
+		</div>
+	  </div>
 	</div>
 </div>
 

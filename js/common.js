@@ -58,6 +58,12 @@ function openlink(pageno){
 	}else if(pageno==17)
 	{
 		page="custprofile-pricing.html";
+	}else if(pageno==18)
+	{
+		page="custprofile-blockedorg.html";
+	}else if(pageno==20)
+	{
+		page="custprofile-general.html";
 	}
 	window.location.href = page;
 }

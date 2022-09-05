@@ -409,7 +409,7 @@ body {
     background-color: none;
 	border: 1px solid #373935;
 	border-radius: 4px;
-	width: 160px !important;
+	width: 162px !important;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 13px;
@@ -868,3 +868,10 @@ body {
 	font-weight: 700;
 	font-size: 14px;
 }
+
+.blockedStatus{
+	color: #E31B1A;
+	font-weight:700;
+	font-size:14px;
+}
+
