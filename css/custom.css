@@ -874,4 +874,7 @@ body {
 	font-weight:700;
 	font-size:14px;
 }
+.clsTabSelected button {
+	color: #373935;
+}
 
