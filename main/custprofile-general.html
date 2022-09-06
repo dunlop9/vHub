@@ -192,20 +192,20 @@
 	<div class="col clsNoPaddingLeft clsNoPaddingRight">
 		<button class="btn clsTabButton" onclick="openlink(17)"><img src="../images/icons/radio.svg">Default Pricing & DNU</button>
 	</div>
-	<div class="col clsNoPaddingLeft clsNoPaddingRight clsTabSelected">
-		<button class="btn clsTabButton" onclick="openlink(18)"><img src="../images/icons/circle.svg">Blocked Orgs.</button>
+	<div class="col clsNoPaddingLeft clsNoPaddingRight">
+		<button class="btn clsTabButton" onclick="openlink(18)"><img src="../images/icons/radio.svg">Blocked Orgs.</button>
 	</div>
 	<div class="col clsNoPaddingLeft clsNoPaddingRight">
 		<button class="btn clsTabButton" onclick="openlink(19)"><img src="../images/icons/radio.svg">Owner Service Fees</button>
 	</div>
-	<div class="col clsNoPaddingLeft clsNoPaddingRight">
-		<button class="btn clsTabButton" onclick="openlink(20)"><img src="../images/icons/radio.svg">General Configuration</button>
+	<div class="col clsNoPaddingLeft clsNoPaddingRight clsTabSelected">
+		<button class="btn clsTabButton" onclick="openlink(20)"><img src="../images/icons/circle.svg">General Configuration</button>
 	</div>
 </div>
 
 
 <div class="row fs-7 clsNoLeftMargin clsNoRightMargin">
-	<div class="col-md-10 p-3 mt-3">
+	<div class="col-md-10 p-3 ps-0 mt-3">
 		<span class="clsCustProfDefPricingTxt clsBoldText">General Configuration</span>
 	</div>
 	
@@ -216,21 +216,15 @@
 		<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="" value="4" aria-label="Buffer">
 	</div>
 </div>
-<div class="clsCustProfileBottomBtnSection">
-</div>
 
-
-
-<div class="row fs-7 clsNoLeftMargin clsNoRightMargin">	
+<div class="row fs-7 footer clsNoLeftMargin clsNoRightMargin">	
 	<div class="col-md-12">
-		<div class="my-3 float-end clsGridMargin">
-			<button class="btn clsFormButtonNormal">Discard Changes</button>
+		<div class="my-3 float-end">
+			<button class="btn clsFormButtonNormal">Discard Profile</button>
 			<button type="submit" class="btn clsFormButtonDefault ms-3 me-1">Save & Next</button>
 		</div>
 	</div>
 </div>
-
-
 
 <!--Invite User Modal -->
 <div class="modal fade" id="blockOrgModal" tabindex="-1" aria-hidden="true">
@@ -238,7 +232,7 @@
 		<div class="modal-content">
 		<div class="clsModalBodyPermissions">
 			<h5 class="modal-title clsBolderSectionHeading mb-2">Block Organization</h5>
-				<div class="row mt-3 fs-7">
+				<div class="row mt-3 fs-7">   
 					<div class="col-md-12">
 						<span class="grey-text d-block">Organization</span>
 						<div class="input-group mb-3">

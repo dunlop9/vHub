@@ -61,6 +61,9 @@ function openlink(pageno){
 	}else if(pageno==18)
 	{
 		page="custprofile-blockedorg.html";
+	}else if(pageno==19)
+	{
+		page="custprofile-owner.html";
 	}else if(pageno==20)
 	{
 		page="custprofile-general.html";
