@@ -108,29 +108,31 @@
 <header>
 	<nav class="navbar top-nav sticky-top bg-white">
 		<div class="container-fluid">
-			<button class="btn float-end navbar-btn active p-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-			<a class="navbar-brand ms-4" href="https://www.vhubapp.com/" target="_blank">
-				<img src="../images/logo.png" />
-				<!--<div class="logo"></div>-->
-			</a>
-			<div class="navbar-nav flex-row ms-md-auto pe-0">
+			<div>
+				<button class="btn navbar-btn active p-1 pt-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<a class="navbar-brand ms-3" href="https://www.vhubapp.com/" target="_blank">
+					<img src="../images/logo.png" />
+					<!--<div class="logo"></div>-->
+				</a>
+			</div>
+			<div class="navbar-nav d-none d-md-flex flex-row ms-md-auto pe-0">
 				<form class="d-flex" role="search">
 				  <input class="form-control me-3 mt-1 nav-search" type="search" placeholder="Search" aria-label="Search">
 				</form>
 				<span class="nav-separator mt-1 fs-5"> | </span>
 				<ul class="navbar-nav flex-row flex-wrap">
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
-					<span class="nav-separator mt-1 fs-5 pe-3"> | </span>
-					<li class="nav-item col-6 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
-					<li class="nav-item col-6 col-lg-auto mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
-					<li class="nav-item dropdown ms-3 me-1 mt-1">
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
+					<span class="nav-separator mt-1 fs-5 pe-2 pe-lg-3"> | </span>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
+					<li class="nav-item col-6 col-lg-auto d-none d-lg-block mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
+					<li class="nav-item dropdown ms-1 ms-lg-3 me-1 mt-1">
 					  <a class="nav-link  grey-text fs-7" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 						<img src="../images/icons/arrow-down.svg">
 					  </a>
@@ -150,14 +152,14 @@
 	</nav>
 	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="bg-breadcrumb">
 	    <div class="row me-0">
-		  <div class="col-10">
+		  <div class="col-6 col-sm-6 col-md-8 col-lg-10">
 			<ol class="breadcrumb fs-7 ms-2 pt-1">
 				<li class="breadcrumb-item"><a href="#" class="darkgrey-text text-decoration-none">Home</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Drivers</li>
 			</ol>
 		  </div>
 		  
-		  <div class="col-2">
+		  <div class="col-6 col-sm-6 col-md-4 col-lg-2">
 			  <a class="nav-link  grey-text fs-7 pt-1 pe-1 text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 				Last Accessed <img class="breadcrumb-lastarrow" src="../images/icons/arrow-down.svg">
 			  </a>

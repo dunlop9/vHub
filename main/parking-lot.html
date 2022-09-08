@@ -109,29 +109,31 @@
 <header>
 	<nav class="navbar top-nav sticky-top bg-white">
 		<div class="container-fluid">
-			<button class="btn float-end navbar-btn active p-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-			<a class="navbar-brand ms-4" href="https://www.vhubapp.com/" target="_blank">
-				<img src="../images/logo.png" />
-				<!--<div class="logo"></div>-->
-			</a>
-			<div class="navbar-nav flex-row ms-md-auto pe-0">
+			<div>
+				<button class="btn navbar-btn active p-1 pt-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<a class="navbar-brand ms-3" href="https://www.vhubapp.com/" target="_blank">
+					<img src="../images/logo.png" />
+					<!--<div class="logo"></div>-->
+				</a>
+			</div>
+			<div class="navbar-nav d-none d-md-flex flex-row ms-md-auto pe-0">
 				<form class="d-flex" role="search">
 				  <input class="form-control me-3 mt-1 nav-search" type="search" placeholder="Search" aria-label="Search">
 				</form>
 				<span class="nav-separator mt-1 fs-5"> | </span>
 				<ul class="navbar-nav flex-row flex-wrap">
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
-					<span class="nav-separator mt-1 fs-5 pe-3"> | </span>
-					<li class="nav-item col-6 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
-					<li class="nav-item col-6 col-lg-auto mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
-					<li class="nav-item dropdown ms-3 me-1 mt-1">
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
+					<span class="nav-separator mt-1 fs-5 pe-2 pe-lg-3"> | </span>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
+					<li class="nav-item col-6 col-lg-auto d-none d-lg-block mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
+					<li class="nav-item dropdown ms-1 ms-lg-3 me-1 mt-1">
 					  <a class="nav-link  grey-text fs-7" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 						<img src="../images/icons/arrow-down.svg">
 					  </a>
@@ -151,14 +153,14 @@
 	</nav>
 	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="bg-breadcrumb">
 	    <div class="row me-0">
-		  <div class="col-10">
+		  <div class="col-6 col-sm-6 col-md-8 col-lg-10">
 			<ol class="breadcrumb fs-7 ms-2 pt-1">
 				<li class="breadcrumb-item"><a href="#" class="darkgrey-text text-decoration-none">Home</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Parking Lot</li>
 			</ol>
 		  </div>
 		  
-		  <div class="col-2">
+		  <div class="col-6 col-sm-6 col-md-4 col-lg-2">
 			  <a class="nav-link  grey-text fs-7 pt-1 pe-1 text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 				Last Accessed <img class="breadcrumb-lastarrow" src="../images/icons/arrow-down.svg">
 			  </a>
@@ -180,7 +182,7 @@
 </header>
 <div class="container-fluid mt-4">
     <div class="row fs-7">
-        <div class="col-md-3">
+        <div class="col-8 col-md-4 col-lg-3">
 			<span class="grey-text">Company Name (DBA)</span>
 			<select class="form-select clsBoldText" aria-label="Default select example">
 			  <option >Select</option>
@@ -188,7 +190,7 @@
 			  <option value="2">Prime Transportation</option>
 			</select>
 		</div>
-		<div class="col-md-2">
+		<div class="col-4 col-md-3 col-lg-2">
 			<span class="grey-text">Status</span>
 			<select class="form-select clsBoldText" aria-label="Default select example">
 			  <option >Select</option>
@@ -196,15 +198,15 @@
 			  <option value="2">Inactive</option>
 			</select>
 		</div>
-		<div class="col-md-3"></div>
-		<div class="col-md-2 p-4">
-			<div class="input-group" style="width:285px">
+		<div class="col-0 d-md-none d-lg-block col-lg-3"></div>
+		<div class="col-8 col-md-3 col-lg-3 p-4 pe-3">
+			<div class="input-group" style="">
 			  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
 			  <input type="text" class="form-control clsStandardText" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
 			</div>
 		</div>
-		<div class="col-md-2 p-4 pe-3">
-			<button type="button" class="btn float-end clsBoldText driver-btn" style="" data-bs-toggle="modal" data-bs-target="#createParkingModal">Parking Lot</button>
+		<div class="col-4 col-md-2 col-lg-1 p-4 pe-3">
+			<button type="button" class="btn float-end clsBoldText driver-btn" style="" data-bs-toggle="modal" data-bs-target="#createParkingModal">Create</button>
 
 			<!--Create Parking Lot Modal -->
 			<div class="modal fade" id="createParkingModal" tabindex="-1" aria-labelledby="createParkingModalLabel" aria-hidden="true">
@@ -311,9 +313,45 @@
 			</div>
 		</div>
     </div>
-	<div class="row">
+	<div class="row d-none d-lg-block">
 		<div id="myGrid" style="height: 305px;" class="ag-theme-alpine"></div>
 	</div>
+	<!--tab and mobile views-->
+	<div class="row clsGridRow clsGridSelectedRow p-1 mt-3 ms-0 me-0 d-lg-none ">
+		<div class="col-6 col-sm-6 col-md-3 order-md-1  mt-3">
+			<div class="grey-text clsStandardText">Parking Lot Name</div>
+			<a class="clsAnchor clsBigStandardText text-decoration-none" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#editParkingModal" href="#">Wiggle Wine</a>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 order-md-2  mt-3">
+			<div class="grey-text clsStandardText">Contact Number</div>
+			<span class="clsBigStandardText clsDarkGrayText">+1 (773) 404-2827</span>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 order-md-3  mt-3">
+			<div class="grey-text clsStandardText">Location</div>
+			<span class="clsBigStandardText clsDarkGrayText">1060W Addison St, Chicago, IL 60613,US</span>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 order-md-4  mt-3">
+			<div class="grey-text clsStandardText">Email</div>
+			<span class="clsBigStandardText clsDarkGrayText">wiggle.wine@gmail.com</span>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 order-md-5 mt-3">
+			<div class="grey-text clsStandardText">24 Hours Access</div>
+			<span class="clsBigStandardText clsDarkGrayText">Yes</span>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 order-md-6 mt-3">
+			<div class="grey-text clsStandardText">Parking Rates</div>
+			<a class="clsAnchor clsBigStandardText text-decoration-none" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#parkingRatesModal" href="#">View</a>
+		</div>	
+		<div class="col-6 col-sm-6 col-md-3 order-md-7 mt-3">
+			<div class="grey-text clsStandardText">Parking Instructions</div>
+			<a class="clsAnchor clsBigStandardText text-decoration-none" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#parkingInstructionsModal" href="#">View Instructions</a>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 order-last  mt-3">
+			<div class="grey-text clsStandardText">Status</div>
+			<span class="clsBigStandardText clsBolderText">Active</span>
+		</div>		
+	</div>
+	
 	<!--Edit Parking Lot Modal -->
 	<div class="modal fade fs-7" id="editParkingModal" tabindex="-1" aria-labelledby="editParkingModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered">
