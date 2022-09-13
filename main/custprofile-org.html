@@ -108,29 +108,31 @@
 <header>
 	<nav class="navbar top-nav sticky-top bg-white">
 		<div class="container-fluid">
-			<button class="btn float-end navbar-btn active p-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-			<a class="navbar-brand ms-4" href="https://www.vhubapp.com/" target="_blank">
-				<img src="../images/logo.png" />
-				<!--<div class="logo"></div>-->
-			</a>
-			<div class="navbar-nav flex-row ms-md-auto pe-0">
+			<div>
+				<button class="btn navbar-btn active p-1 pt-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" type="button" id="sidebarCollapse" class="navbar-btn" onclick="toggleFunc()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<a class="navbar-brand ms-3" href="https://www.vhubapp.com/" target="_blank">
+					<img src="../images/logo.png" />
+					<!--<div class="logo"></div>-->
+				</a>
+			</div>
+			<div class="navbar-nav d-none d-md-flex flex-row ms-md-auto pe-0">
 				<form class="d-flex" role="search">
 				  <input class="form-control me-3 mt-1 nav-search" type="search" placeholder="Search" aria-label="Search">
 				</form>
 				<span class="nav-separator mt-1 fs-5"> | </span>
 				<ul class="navbar-nav flex-row flex-wrap">
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
-					<li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
-					<span class="nav-separator mt-1 fs-5 pe-3"> | </span>
-					<li class="nav-item col-6 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
-					<li class="nav-item col-6 col-lg-auto mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
-					<li class="nav-item dropdown ms-3 me-1 mt-1">
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-calendar"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-message"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-bell"></i></a></li>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto"><a class="nav-link py-2 px-3 grey-text" href="#"><i class="fa-regular fa-heart"></i></a></li>
+					<span class="nav-separator mt-1 fs-5 pe-2 pe-lg-3"> | </span>
+					<li class="nav-item col-2 col-sm-2 col-lg-auto mt-1"><img src="../images/img(25).jpg" height="44px" class="rounded-circle"/></li>
+					<li class="nav-item col-6 col-lg-auto d-none d-lg-block mt-1 ms-2"><span class="fs-7 darkgrey-text d-block clsBoldText"> John Doe</span><span class="fs-7 grey-text d-block clsBoldText"> Finlock Finance Inc</span></li>
+					<li class="nav-item dropdown ms-1 ms-lg-3 me-1 mt-1">
 					  <a class="nav-link  grey-text fs-7" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 						<img src="../images/icons/arrow-down.svg">
 					  </a>
@@ -150,14 +152,14 @@
 	</nav>
 	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="bg-breadcrumb">
 	    <div class="row me-0">
-		  <div class="col-10">
+		  <div class="col-6 col-sm-6 col-md-8 col-lg-10">
 			<ol class="breadcrumb fs-7 ms-2 pt-1">
 				<li class="breadcrumb-item"><a href="#" class="darkgrey-text text-decoration-none">Home</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Drivers</li>
+				<li class="breadcrumb-item active" aria-current="page">Parking Lot</li>
 			</ol>
 		  </div>
 		  
-		  <div class="col-2">
+		  <div class="col-6 col-sm-6 col-md-4 col-lg-2">
 			  <a class="nav-link  grey-text fs-7 pt-1 pe-1 text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 				Last Accessed <img class="breadcrumb-lastarrow" src="../images/icons/arrow-down.svg">
 			  </a>
@@ -201,162 +203,166 @@
 	</div>
 </div>
 
-<div class="container-fluid my-4 py-2">
-     <div class="row fs-7">
-		<div class="col-md-2">
-		</div>
-        <div class="col-md-10 float-start">
-			<div class="d-inline-block align-top pe-3">
-				<img class="" src="../images/custprofile-cmpnylogo.svg">
+<div class="overflow-auto" style="height:70vh;">
+	<div class="container-fluid my-4 py-2">
+		<div class="row fs-7">
+			<div class="col-lg-2 d-none d-lg-block">
 			</div>
-			<div class="d-inline-block">
-				<h5 class="dark-grey">Ace Cloud Transportation</h5>
-				<p class="grey-text">Trailer Owner</p>
-				<a href="#" class="text-deoration-none fw-500">View History</a>
+			<div class="col-md-12 col-lg-8 float-start">
 				<div class="row">
-				<div class="col-md-6">
-				<div class="accountApprBg">
-					<p class="dark-grey fw-500 py-2 mb-0"><img src="../images/icons/circle.svg" class="mx-2"> Owner Account Approved! <button class="btn accountApprBtnRed">Disapprove</button></p>
-				</div>
-				</div>
-				<div class="col-md-6">
-				<div class="accountApprBg">
-					<p class="dark-grey fw-500 py-2 mb-0"><img src="../images/icons/circle.svg" class="mx-2"> Owner Account Approved! <button class="btn accountApprBtnRed">Disapprove</button></p>
-				</div>
-				</div>
+					<div class="d-inline-block text-center text-md-start col-md-2 col-lg-2 align-top pe-md-1 pe-lg-3">
+						<img class="" src="../images/custprofile-cmpnylogo.svg">
+					</div>
+					<div class="d-inline-block col-md-10 col-lg-10 ps-4">
+						<h5 class="dark-grey">Ace Cloud Transportation</h5>
+						<p class="grey-text">Trailer Owner</p>
+						<a href="#" class="text-deoration-none fw-500">View History</a>
+						<div class="row">
+						<div class="col-md-6">
+						<div class="accountApprBg">
+							<p class="dark-grey fw-500 py-2 mb-0"><img src="../images/icons/circle.svg" class="mx-md-1 mx-lg-2">Owner Account Approved! <button class="btn accountApprBtnRed float-end float-md-none">Disapprove</button></p>
+						</div>
+						</div>
+						<div class="col-md-6">
+						<div class="accountApprBg">
+							<p class="dark-grey fw-500 py-2 mb-0"><img src="../images/icons/circle.svg" class="mx-md-1 mx-lg-2">Owner Account Approved! <button class="btn accountApprBtnRed float-end float-md-none">Disapprove</button></p>
+						</div>
+						</div>
+						</div>
+					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row fs-7">
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>        
+			<div class="col-md-5 col-lg-3 my-2 my-md-0">
+				<span class="grey-text">Company Name (DBA)</span> 
+				<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Company Name(DBA)" value="Ace Cloud Transportation" aria-label="Company Name(DBA)">
+			</div>
+			<div class="col-md-4 col-lg-3 my-2 my-md-0">
+				<span class="grey-text">Login vHub as A</span> 
+				<select class="form-select clsFormInputControl" placeholder="Login vHub as A"  aria-label="Login vHub as A">
+				  <option selected value="1">Trailer Owner</option>
+				  <option value="2">Item2</option>
+				  <option value="3">Item3</option>
+				  <option value="4">Item4</option>
+				  <option value="5">Item5</option>
+				</select>
+			</div>	
+			<div class="col-md-3 col-lg-2 my-2 my-md-0">
+				<span class="grey-text">Status</span> 
+				<select class="form-select clsFormInputControl" placeholder="Status"  aria-label="Status">
+				  <option selected value="1">Active</option>
+				  <option value="2">Inactive</option>
+				</select>
+			</div>			
+			<div class="col-lg-2 d-none d-lg-block">
 			</div>
 		</div>
-		
-    </div>
-</div>
+		<div class="row fs-7 mt-0 mt-md-3">
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>
+			<div class="col-md-5 col-lg-3 my-2 my-md-0">
+				<span class="grey-text">Legal Name</span> 
+				<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Legal Name" value="Ace Clouds" aria-label="Legal Name">
+			</div>		
+			<div class="col-md-4 col-lg-3 my-2 my-md-0">
+			<span class="grey-text">Address 1</span> 
+			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Address" aria-label="Address1">
+			</div>
+			<div class="col-md-3 col-lg-2 my-2 my-md-0">
+				<span class="grey-text">Country</span> 
+				<select class="form-select clsFormInputControl" placeholder="Select Country"  aria-label="Select Country">
+				  <option value="0">Select</option>
+				  <option selected value="1">United States</option>
+				  <option value="2">Canada</option>
+				  <option value="3">UK</option>
+				  <option value="4">India</option>
+				</select>		
+			</div>		
 
-<div class="container-fluid">
-    <div class="row fs-7">
-        <div class="col-md-2">
-		</div>        
-		<div class="col-md-3">
-			<span class="grey-text">Company Name (DBA)</span> 
-			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Company Name(DBA)" value="Ace Cloud Transportation" aria-label="Company Name(DBA)">
-		</div>
-		<div class="col-md-3">
-			<span class="grey-text">Login vHub as A</span> 
-			<select class="form-select clsFormInputControl" placeholder="Login vHub as A"  aria-label="Login vHub as A">
-			  <option selected value="1">Trailer Owner</option>
-			  <option value="2">Item2</option>
-			  <option value="3">Item3</option>
-			  <option value="4">Item4</option>
-			  <option value="5">Item5</option>
-			</select>
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>
 		</div>	
-		<div class="col-md-2">
-			<span class="grey-text">Status</span> 
-			<select class="form-select clsFormInputControl" placeholder="Status"  aria-label="Status">
-			  <option selected value="1">Active</option>
-			  <option value="2">Inactive</option>
-			</select>
-		</div>			
-		<div class="col-md-2">
+		<div class="row fs-7 mt-0 mt-md-3">
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>  
+			<div class="col-md-5 col-lg-3 my-2 my-md-0">
+				<span class="grey-text">Transport Commission No. (CTQ,CVOR etc.)</span> 
+				<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Transport Commission No. (CTQ,CVOR etc.)" value="CTQ" aria-label="Transport Commission No. (CTQ,CVOR etc.)">
+			</div>	
+			<div class="col-md-4 col-lg-3 my-2 my-md-0">
+			<span class="grey-text">City</span> 
+			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter City" aria-label="City">		
+			</div>
+			<div class="col-md-3 col-lg-2 my-2 my-md-0">
+				<span class="grey-text">Province</span> 
+				<select class="form-select clsFormInputControl" placeholder="Select Province"  aria-label="Select Province">
+				  <option selected value="0">Select</option>
+				  <option value="1">Province1</option>
+				  <option value="2">Province2</option>
+				  <option value="3">Province3</option>
+				  <option value="4">Province4</option>
+				  <option value="5">Province5</option>
+				</select>
+			</div>
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>
 		</div>
-    </div>
-    <div class="row fs-7 clsFormStandardTopMargin">
-        <div class="col-md-2">
-		</div>
-		<div class="col-md-3">
-			<span class="grey-text">Legal Name</span> 
-			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Legal Name" value="Ace Clouds" aria-label="Legal Name">
-		</div>		
-		<div class="col-md-3">
-		<span class="grey-text">Address 1</span> 
-		<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Address" aria-label="Address1">
-		</div>
-		<div class="col-md-2">
-			<span class="grey-text">Country</span> 
-			<select class="form-select clsFormInputControl" placeholder="Select Country"  aria-label="Select Country">
-			  <option value="0">Select</option>
-			  <option selected value="1">United States</option>
-			  <option value="2">Canada</option>
-			  <option value="3">UK</option>
-			  <option value="4">India</option>
-			</select>		
-		</div>		
+		<div class="row fs-7 mt-0 mt-md-3">
+			<div class="col-lg-2 d-none d-lg-block">
+			</div> 	
+			<div class="col-md-5 col-lg-3 my-2 my-md-0">
+				<span class="grey-text">Postal Code</span> 
+				<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Postal Code" aria-label="Postal Code">
+			</div>
 
-		<div class="col-md-2">
+			<div class="col-md-4 col-lg-3 my-2 my-md-0">
+				<span class="grey-text">Phone Number</span> 
+				<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Phone Number" aria-label="Phone Number">		
+			</div>
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>
 		</div>
-    </div>	
-    <div class="row fs-7 clsFormStandardTopMargin">
-        <div class="col-md-2">
-		</div>  
-		<div class="col-md-3">
-			<span class="grey-text">Transport Commission No. (CTQ,CVOR etc.)</span> 
-			<input type="text" class="form-control clsStandardText clsBoldText clsFormInputControl" placeholder="Transport Commission No. (CTQ,CVOR etc.)" value="CTQ" aria-label="Transport Commission No. (CTQ,CVOR etc.)">
+		<div class="row fs-7 mt-0 mt-md-3">
+			<div class="col-lg-2 d-none d-lg-block">
+			</div> 	
+			<div class="col-md-5 col-lg-2">
+				<input type="checkbox" id="chkOperateCanada" name="OperateCanada" value="OperateCanada">
+				<label class="clsControlLabel" for="vehicle1"> Can Operate in Canada</label>
+			</div>
+			<div class="col-md-4 col-lg-2">
+				<input type="checkbox" id="chkOperateUS" name="OperateUS" value="OperateUS">
+				<label class="clsControlLabel" for="vehicle1"> Can Operate in US</label>
+			</div>
+			<div class="col-md-3 col-lg-2">
+				<input type="checkbox" id="chkOperateCrossBorder" name="OperateCrossBorder" value="OperateCrossBorder">
+				<label class="clsControlLabel" for="vehicle1"> Cross Border</label>
+			</div>		
+			<div class="col-md-2">
+			</div>	
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>
+		</div>
+		<div class="row fs-7 mt-0 mt-md-3">
+			<div class="col-lg-2 d-none d-lg-block">
+			</div> 	
+			<div class="col-md-12 col-lg-6">
+				<input type="checkbox" id="chkOperateCanada" name="OperateCanada" value="OperateCanada">
+				<label class="clsControlLabel" for="vehicle1"> Anonymous Listing (Do not show organization information until reservation is created)</label>
+			</div>
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>	
+			<div class="col-lg-2 d-none d-lg-block">
+			</div>
 		</div>	
-		<div class="col-md-3">
-		<span class="grey-text">City</span> 
-		<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter City" aria-label="City">		
-		</div>
-		<div class="col-md-2">
-			<span class="grey-text">Province</span> 
-			<select class="form-select clsFormInputControl" placeholder="Select Province"  aria-label="Select Province">
-			  <option selected value="0">Select</option>
-			  <option value="1">Province1</option>
-			  <option value="2">Province2</option>
-			  <option value="3">Province3</option>
-			  <option value="4">Province4</option>
-			  <option value="5">Province5</option>
-			</select>
-		</div>
-		<div class="col-md-2">
-		</div>
-    </div>
-    <div class="row fs-7 clsFormStandardTopMargin">
-        <div class="col-md-2">
-		</div> 	
-		<div class="col-md-3">
-			<span class="grey-text">Postal Code</span> 
-			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Postal Code" aria-label="Postal Code">
-		</div>
-
-		<div class="col-md-2">
-			<span class="grey-text">Phone Number</span> 
-			<input type="text" class="form-control clsStandardText clsFormInputControl" placeholder="Enter Phone Number" aria-label="Phone Number">		
-		</div>
-		<div class="col-md-2">
-		</div>
-    </div>
-    <div class="row fs-7 clsFormStandardTopMargin">
-        <div class="col-md-2">
-		</div> 	
-		<div class="col-md-2">
-			<input type="checkbox" id="chkOperateCanada" name="OperateCanada" value="OperateCanada">
-			<label class="clsControlLabel" for="vehicle1"> Can Operate in Canada</label>
-		</div>
-		<div class="col-md-2">
-			<input type="checkbox" id="chkOperateUS" name="OperateUS" value="OperateUS">
-			<label class="clsControlLabel" for="vehicle1"> Can Operate in US</label>
-		</div>
-		<div class="col-md-2">
-			<input type="checkbox" id="chkOperateCrossBorder" name="OperateCrossBorder" value="OperateCrossBorder">
-			<label class="clsControlLabel" for="vehicle1"> Cross Border</label>
-		</div>		
-		<div class="col-md-2">
-		</div>	
-		<div class="col-md-2">
-		</div>
-    </div>
-    <div class="row fs-7 clsFormControlTopMargin">
-        <div class="col-md-2">
-		</div> 	
-		<div class="col-md-6">
-			<input type="checkbox" id="chkOperateCanada" name="OperateCanada" value="OperateCanada">
-			<label class="clsControlLabel" for="vehicle1"> Anonymous Listing (Do not show organization information until reservation is created)</label>
-		</div>
-		<div class="col-md-2">
-		</div>	
-		<div class="col-md-2">
-		</div>
-    </div>	
+	</div>	
+</div>	
+<div>	
 	<div class="row fs-7 footer clsNoLeftMargin clsNoRightMargin">	
 		<div class="col-md-12">
 		<div class="my-3 float-end clsGridMargin">

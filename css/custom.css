@@ -600,6 +600,21 @@ body {
 	margin-right: 8px;
 }
 
+@media screen and (max-width: 991px) {
+	.accountApprBtnRed {
+		background: #E31B1A;
+		border-radius: 2px;
+		color: white;
+		font-size: 12px;
+		height: 28px;
+		padding: 0.3rem 0.3rem;
+		font-weight: 500;
+		margin-left: 0px;
+		margin-right: 6px;
+		width: 80px;
+	}
+}
+
 .accountApprBtnRed:hover{
 	color:white;
 }
